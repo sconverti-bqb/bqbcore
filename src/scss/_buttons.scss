@@ -1,0 +1,125 @@
+@import "mixins/buttons";
+
+//
+// Base styles
+//
+
+.bqb-btn {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  cursor: pointer;
+  transition: all .15s ease-in-out;
+  padding: 0 2rem;
+  font-size: 1.4rem;
+  height: 3.5rem; // TODO: Chequear si conviene usar height/line-height o manejar el botón con paddings
+  line-height: 3.4rem; // TODO: Chequear si conviene usar height/line-height o manejar el botón con paddings
+  border-radius: $border-radius;
+  border: 0 none;
+  color: #fff;
+
+  // Share hover and focus styles
+  &:focus,
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: .65;
+  }
+
+  &:active,
+  &.active {
+    background-image: none;
+  }
+
+  .icon {
+    margin-right: .5rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 4.5rem;
+    line-height: 4.4rem;
+  }
+
+  //
+  // Button types
+  //
+
+  &.btn-default { @include btn-theme (#fff); }
+  &.btn-primary { @include btn-theme (#0077c4); }
+  &.btn-secondary { @include btn-theme (#93b551); }
+  &.btn-facebook { @include btn-theme (#23599A); }
+  &.btn-google { @include btn-theme (#F74733); }
+
+  &.btn-navigation {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e5e5e5;
+
+    &:focus,
+    &.focus,
+    &:hover {
+      background-color: #eee;
+      color: #0077c4;
+      border-color: #0077c4;
+    }
+
+    &:active,
+    &.active,
+    &:active:focus,
+    &:active:hover,
+    &.active:focus,
+    &.active:hover {
+      background-color: #0084c1;
+      color: #fff;
+      border-color: #e5e5e5;
+    }
+  }
+
+  //
+  // Button Sizes
+  //
+
+  &.btn-lg {
+    font-size: 1.6rem;
+    height: 4.5rem;
+    line-height: 4.4rem;
+  }
+
+  &.btn-sm {
+    font-size: 1.1rem;
+    height: 2.5rem;
+    line-height: 2.4rem;
+  }
+
+  &.btn-w-lg {}
+
+  &.btn-w-sm {}
+
+  //
+  // Button as Block
+  //
+
+  &.btn-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.bqb-btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
