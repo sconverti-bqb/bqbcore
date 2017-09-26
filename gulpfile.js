@@ -1,10 +1,16 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
+var postcss = require('gulp-postcss');
+var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('autoprefixer');
 
 gulp.task('styles', function() {
   gulp.src('./src/scss/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(postcss([ autoprefixer() ]))
     .pipe(gulp.dest('./src/css'))
     .pipe(browserSync.reload({stream: true}));
 });
