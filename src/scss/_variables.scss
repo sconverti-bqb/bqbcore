@@ -184,8 +184,8 @@ $line-height-sm:         1.5 !default;
 $border-width: 1px !default;
 $border-color: $gray-200 !default;
 
-$border-radius:          .25rem !default;
-$border-radius-lg:       .3rem !default;
+$border-radius:          .4rem !default;
+$border-radius-lg:       .6rem !default;
 $border-radius-sm:       .2rem !default;
 
 $component-active-color: $white !default;
@@ -219,9 +219,9 @@ $line-height-base: 1.5 !default;
 
 $h1-font-size: 2.5rem !default;
 $h2-font-size: 2rem !default;
-$h3-font-size: 1.75rem !default;
+$h3-font-size: 1.8rem !default;
 $h4-font-size: 1.5rem !default;
-$h5-font-size: 1.25rem !default;
+$h5-font-size: 1.3rem !default;
 $h6-font-size: 1rem !default;
 
 $headings-margin-bottom: ($spacer / 2) !default;
@@ -407,10 +407,10 @@ $custom-checkbox-indicator-indeterminate-box-shadow: none !default;
 $custom-radio-indicator-border-radius: 50% !default;
 $custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3E%3C/svg%3E"), "#", "%23") !default;
 
-$custom-select-padding-y:          .375rem !default;
-$custom-select-padding-x:          .75rem !default;
+$custom-select-padding-y:          .6rem !default;
+$custom-select-padding-x:          1.2rem !default;
 $custom-select-height:              $input-height !default;
-$custom-select-indicator-padding:   1rem !default; // Extra padding to account for the presence of the background-image based indicator
+$custom-select-indicator-padding:   1.6rem !default; // Extra padding to account for the presence of the background-image based indicator
 $custom-select-line-height:         $input-btn-line-height !default;
 $custom-select-color:               $input-color !default;
 $custom-select-disabled-color:      $gray-600 !default;
