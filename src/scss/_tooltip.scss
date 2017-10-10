@@ -1,5 +1,5 @@
 // Base class
-.bqb-tooltip {
+.tooltip {
   position: absolute;
   z-index: $zindex-tooltip;
   display: block;
@@ -19,6 +19,12 @@
     display: block;
     width: $tooltip-arrow-width;
     height: $tooltip-arrow-height;
+  }
+
+  .arrow::before {
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
   }
 
   &.bs-tooltip-top {
@@ -88,16 +94,10 @@
       @extend .bs-tooltip-left;
     }
   }
-
-  .arrow::before {
-    position: absolute;
-    border-color: transparent;
-    border-style: solid;
-  }
 }
 
 // Wrapper for the tooltip content
-.bqb-tooltip-inner {
+.tooltip-inner {
   max-width: $tooltip-max-width;
   padding: $tooltip-padding-y $tooltip-padding-x;
   color: $tooltip-color;
