@@ -39,8 +39,8 @@
     opacity: .65;
   }
 
-  &:active,
-  &.active {
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active {
     background-image: none;
   }
 
