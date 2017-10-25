@@ -1,7 +1,7 @@
 // Form control focus state
 //
 // Generate a customized focus state and for any input with the specified color,
-// which defaults to the `@input-border-color-focus` variable.
+// which defaults to the `$input-focus-border-color` variable.
 //
 // We highly encourage you to not customize the default value, but instead use
 // this to tweak colors on an as-needed basis. This aesthetic change is based on
@@ -16,7 +16,12 @@
     background-color: $input-focus-bg;
     border-color: $input-focus-border-color;
     outline: none;
-    @include box-shadow($input-focus-box-shadow);
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $input-box-shadow, $input-btn-focus-box-shadow;
+    } @else {
+      box-shadow: $input-btn-focus-box-shadow;
+    }
   }
 }
 
@@ -80,6 +85,10 @@
       ~ .custom-control-indicator {
         background-color: rgba($color, .25);
       }
+    &:focus {
+      ~ .custom-control-indicator {
+      box-shadow: 0 0 0 1px $body-bg, 0 0 0 3px $color;
+      }
       ~ .custom-control-description {
         color: $color;
       }
@@ -97,6 +106,7 @@
       }
       &:focus {
         box-shadow: 0 0 0 .2rem rgba($color,.25);
+
       }
     }
   }
