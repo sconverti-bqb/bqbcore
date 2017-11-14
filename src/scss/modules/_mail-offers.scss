@@ -1,0 +1,33 @@
+// Mail Offers
+
+.bqb-mail-offers {
+  padding: 1rem 0;
+
+  .form-inline {
+    flex-flow: row nowrap;
+
+    .offers-text {
+      font-size: 1.8rem;
+      white-space: nowrap;
+      user-select: none;
+      cursor: default;
+      margin-left: 2rem;
+    }
+
+    .bqb-form-group {
+      margin: 0 1rem 0 2rem;
+      width: 100%;
+    }
+  }
+
+  // Themes
+  &.theme-buquebus {
+    background-color: $mail-offers-buquebus-bg;
+    color: $mail-offers-buquebus-color;
+  }
+
+  &.theme-turismo {
+    background-color: $mail-offers-buquebus-bg;
+    color: $mail-offers-buquebus-color;
+  }
+}

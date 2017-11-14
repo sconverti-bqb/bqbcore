@@ -177,7 +177,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px
+  xl: 1400px
 ) !default;
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
@@ -286,8 +286,8 @@ $mark-bg: #fcf8e3 !default;
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
 
-$table-cell-padding:            .75rem !default;
-$table-cell-padding-sm:         .3rem !default;
+$table-cell-padding:            1rem !default;
+$table-cell-padding-sm:         .5rem !default;
 
 $table-bg:                      transparent !default;
 $table-accent-bg:               rgba($black,.05) !default;
@@ -300,11 +300,11 @@ $table-border-color:            $gray-200 !default;
 $table-head-bg:                 $gray-200 !default;
 $table-head-color:              $gray-700 !default;
 
-$table-dark-bg:              $gray-900 !default;
-$table-dark-accent-bg:       rgba($white, .05) !default;
-$table-dark-hover-bg:        rgba($white, .075) !default;
-$table-dark-border-color:    lighten($gray-900, 7.5%) !default;
-$table-dark-color:           $body-bg !default;
+$table-dark-bg:                 $gray-900 !default;
+$table-dark-accent-bg:          rgba($white, .05) !default;
+$table-dark-hover-bg:           rgba($white, .075) !default;
+$table-dark-border-color:       lighten($gray-900, 7.5%) !default;
+$table-dark-color:              $body-bg !default;
 
 
 // Buttons
@@ -375,7 +375,7 @@ $input-height-sm:               calc(#{$input-height-inner-sm} + #{$input-height
 $input-height-inner-lg:         4.5rem !default // ($font-size-lg * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2) !default;
 $input-height-lg:               calc(#{$input-height-inner-lg} + #{$input-height-border}) !default;
 
-$input-transition:               border-color ease-in-out .15s, box-shadow ease-in-out .15s !default;
+$input-transition:              border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
 $form-text-margin-top:     .25rem !default;
 
@@ -553,8 +553,12 @@ $navbar-toggler-padding-x:           .75rem !default;
 $navbar-toggler-font-size:           $font-size-lg !default;
 $navbar-toggler-border-radius:       $btn-border-radius !default;
 
-$navbar-turismo-bg:                 #082f61 !default;
-$navbar-turismo-navbar-row-bg:      #0b3872 !default;
+// Header
+
+$header-turismo-bg:                 $black !default;
+$header-turismo-navigation-bg:      $black !default;
+$header-turismo-color:              $white !default;
+$header-turismo-brand-padding:      1.5rem 0 !default;
 $navbar-dark-color:                 rgba($white,.5) !default;
 $navbar-dark-hover-color:           rgba($white,.75) !default;
 $navbar-dark-active-color:          rgba($white,1) !default;
@@ -562,14 +566,25 @@ $navbar-dark-disabled-color:        rgba($white,.25) !default;
 $navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
 $navbar-dark-toggler-border-color:  rgba($white,.1) !default;
 
-$navbar-buquebus-bg:                #082f61 !default;
-$navbar-buquebus-navbar-row-bg:     #0b3872 !default;
-$navbar-buquebus-color:             $white !default;
-$navbar-light-hover-color:          rgba($black,.7) !default;
-$navbar-buquebus-active-color:      $white !default;
-$navbar-light-disabled-color:       rgba($black,.3) !default;
-$navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-buquebus-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-light-toggler-border-color: rgba($black,.1) !default;
+$header-buquebus-bg:                #082f61 !default;
+$header-buquebus-navigation-bg:     #0b3872 !default;
+$header-buquebus-color:             $white !default;
+$header-buquebus-special:           #00baf2;
+$header-buquebus-brand-padding:     1.5rem 0 !default;
+
+// Footer
+$footer-buquebus-bg:                #082f61 !default;
+$footer-buquebus-color:             $white !default;
+
+$footer-turismo-bg:                 $black !default;
+$footer-turismo-color:              $white !default;
+
+// Mail offers
+$mail-offers-buquebus-bg:           #0b3872 !default;
+$mail-offers-buquebus-color:        $white !default;
+
+$mail-offers-turismo-bg:            $black !default;
+$mail-offers-turismo-color:         $white !default;
 
 // Pagination
 
@@ -607,8 +622,8 @@ $jumbotron-bg:                   $gray-200 !default;
 
 // Cards
 
-$card-spacer-y:            .75rem !default;
-$card-spacer-x:            1.25rem !default;
+$card-spacer-y:            .5rem !default;
+$card-spacer-x:            1.5rem !default;
 $card-border-width:        $border-width !default;
 $card-border-radius:       $border-radius !default;
 $card-border-color:        rgba($black,.125) !default;
@@ -632,15 +647,13 @@ $tooltip-max-width:           200px !default;
 $tooltip-color:               $white !default;
 $tooltip-bg:                  $black !default;
 $tooltip-opacity:             .9 !default;
-$tooltip-padding-y:           3px !default;
-$tooltip-padding-x:           8px !default;
+$tooltip-padding-y:           .25rem !default;
+$tooltip-padding-x:           .5rem !default;
 $tooltip-margin:              0 !default;
 
-
-$tooltip-arrow-width:         5px !default;
-$tooltip-arrow-height:        5px !default;
+$tooltip-arrow-width:         .4rem !default;
+$tooltip-arrow-height:        $tooltip-arrow-width !default;
 $tooltip-arrow-color:         $tooltip-bg !default;
-
 
 // Badges
 
@@ -658,33 +671,34 @@ $badge-pill-border-radius:    10rem !default;
 // Modals
 
 // Padding applied to the modal body
-$modal-inner-padding:         15px !default;
 
-$modal-dialog-margin:         10px !default;
-$modal-dialog-margin-y-sm-up: 30px !default;
+$modal-inner-padding:             1.5rem !default;
 
-$modal-title-line-height:     $line-height-base !default;
-$modal-title-font-size:       2rem !default;
+$modal-dialog-margin:             1rem !default;
+$modal-dialog-margin-y-sm-up:     3rem !default;
 
-$modal-content-bg:               $white !default;
-$modal-content-border-color:     rgba($black,.2) !default;
-$modal-content-border-width:     $border-width !default;
-$modal-content-box-shadow-xs:    0 3px 9px rgba($black,.5) !default;
-$modal-content-box-shadow-sm-up: 0 5px 15px rgba($black,.5) !default;
+$modal-title-line-height:         $line-height-base !default;
+$modal-title-font-size:           2rem !default;
 
-$modal-backdrop-bg:           $black !default;
-$modal-backdrop-opacity:      .5 !default;
-$modal-header-border-color:   $gray-200 !default;
-$modal-footer-border-color:   $modal-header-border-color !default;
-$modal-header-border-width:   $modal-content-border-width !default;
-$modal-footer-border-width:   $modal-header-border-width !default;
-$modal-header-padding:        15px !default;
+$modal-content-bg:                $white !default;
+$modal-content-border-color:      rgba($black,.2) !default;
+$modal-content-border-width:      $border-width !default;
+$modal-content-box-shadow-xs:     0 .3rem .9rem rgba($black,.5) !default;
+$modal-content-box-shadow-sm-up:  0 .5rem 1.5rem rgba($black,.5) !default;
 
-$modal-lg:                    800px !default;
-$modal-md:                    500px !default;
-$modal-sm:                    300px !default;
+$modal-backdrop-bg:               $black !default;
+$modal-backdrop-opacity:          .5 !default;
+$modal-header-border-color:       $gray-200 !default;
+$modal-footer-border-color:       $modal-header-border-color !default;
+$modal-header-border-width:       $modal-content-border-width !default;
+$modal-footer-border-width:       $modal-header-border-width !default;
+$modal-header-padding:            1.5rem !default;
 
-$modal-transition:            transform .3s ease-out !default;
+$modal-lg:                        800px !default;
+$modal-md:                        500px !default;
+$modal-sm:                        300px !default;
+
+$modal-transition:                transform .3s ease-out !default;
 
 
 // Alerts

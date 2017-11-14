@@ -1,0 +1,21 @@
+// Title Skyscraper
+
+.bqb-skyscraper {
+  padding: .8rem 1.6rem;
+  margin-bottom: .5rem;
+  background-color: #7ca6da;
+  color: $white;
+  cursor: default;
+  user-select: none;
+
+  a {
+    color: #fff;
+  }
+
+  .skyscraper-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-right: .5rem;
+  }
+}

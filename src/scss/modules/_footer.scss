@@ -1,0 +1,57 @@
+// Footer
+
+.bqb-footer {
+  padding: 3rem 0;
+
+  .footer-navigation {
+    .navigation-nav {
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+
+      .nav-item {
+        &.title {
+          font-weight: bold;
+          font-size: 1.6rem;
+          margin-bottom: 1rem;
+        }
+
+        .nav-link {
+          @include transition ();
+        }
+      }
+    }
+  }
+
+  // Buquebus Theme
+  &.footer-buquebus {
+    background-color: $header-buquebus-bg;
+    color: $header-buquebus-color;
+
+    .footer-navigation {
+      .navigation-nav {
+        .nav-item {
+          .nav-link {
+            color: $footer-buquebus-color;
+          }
+        }
+      }
+    }
+  }
+
+  // Turismo Theme
+  &.footer-turismo {
+    background-color: $footer-turismo-bg;
+    color: $footer-turismo-color;
+
+    .footer-navigation {
+      .navigation-nav {
+        .nav-item {
+          .nav-link {
+            color: $footer-turismo-color;
+          }
+        }
+      }
+    }
+  }
+}

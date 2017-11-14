@@ -1,0 +1,251 @@
+// Header
+
+.bqb-header {
+  .header-brand {
+    .brand-tools {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+
+      .tools-list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: flex;
+          margin: 0 3rem;
+          align-items: center;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin: 0;
+          }
+
+          a {
+            color: $white;
+          }
+        }
+      }
+
+      .tools-item-help {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $white;
+        border-radius: 1.5rem;
+        height: 3rem;
+        text-align: center;
+        width: 3rem;
+        user-select: none;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          background-color: #00baf2;
+        }
+      }
+    }
+  }
+
+  .header-navigation {
+    .navigation-nav {
+      padding-left: 0;
+      margin-bottom: 0;
+      margin-left: -1.5rem;
+      list-style: none;
+
+      .nav-item {
+        display: inline-block;
+        white-space: nowrap;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-left: 0;
+        }
+
+        &.special {
+          .nav-link {
+            background-color: $header-buquebus-special;
+          }
+        }
+
+        .nav-link {
+          display: block;
+          padding: 1rem 1.5rem;
+          @include transition ();
+        }
+      }
+    }
+  }
+
+  // Dropdown Menu
+
+  .dropdown {
+    position: relative;
+
+    .dropdown-menu {
+      visibility: hidden;
+      opacity: 0;
+      transition: $transition-fade;
+      position: absolute;
+      padding-left: 0;
+      list-style: none;
+      z-index: $zindex-dropdown;
+      background-color: #0b3872;
+
+      a {
+        display: block;
+        color: $white;
+        padding: 1rem 1.5rem;
+
+        &:hover,
+        &:focus {
+          background-color: #082f61;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &.show {
+      .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    // Dropdown positioning
+
+    &.dropdown-left {
+      .dropdown-menu {
+        left: 0;
+      }
+    }
+
+    &.dropdown-right {
+      .dropdown-menu {
+        right: 0;
+      }
+    }
+
+    // Boarding information module
+
+    .menu-boarding-info {
+      background-color: #082f61;
+      padding: .5rem 1.5rem;
+      width: 45rem;
+
+      .boarding-info-wrapper {
+        position: relative;
+
+        table {
+          font-size: 1.3rem;
+          table-layout: fixed;
+          margin: 0;
+
+          th, td {
+            border-top: 0 none;
+            text-align: center;
+            padding: .5rem;
+            white-space: normal;
+
+            &:first-child {
+              padding-left: 0;
+              text-align: left;
+            }
+
+            &:last-child {
+              padding-right: 0;
+            }
+          }
+          th {
+            border-bottom: 1px solid #0b3872;
+            font-weight: normal;
+            font-style: italic;
+
+            &.th-time,
+            &.th-status {
+              width: 11rem;
+            }
+          }
+        }
+
+        .boarding-status-arriving {
+          color: #9dc018;
+        }
+
+        .boarding-status-boarding {
+          color: #fa5242;
+        }
+      }
+
+      .boarding-info-loader {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        visibility: hidden;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition-base;
+        z-index: 1;
+        background-color: #082f61;
+      }
+
+      &.loading {
+        .boarding-info-loader {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // Buquebus Theme
+  &.header-buquebus {
+    background-color: $header-buquebus-bg;
+    color: $header-buquebus-color;
+    font-size: 1.4rem;
+
+    .header-brand {
+      padding: $header-buquebus-brand-padding;
+    }
+
+    .header-navigation {
+      background-color: $header-buquebus-navigation-bg;
+
+      .navigation-nav {
+        .nav-item {
+          .nav-link {
+            color: $header-buquebus-color;
+          }
+        }
+      }
+    }
+  }
+
+  // Turismo Theme
+  &.header-turismo {
+    background-color: $header-turismo-bg;
+    color: $header-turismo-color;
+
+    .header-brand {
+      padding: $header-turismo-brand-padding;
+    }
+
+    .header-navigation {
+      background-color: $header-turismo-navigation-bg;
+    }
+  }
+}

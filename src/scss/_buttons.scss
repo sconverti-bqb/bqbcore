@@ -1,5 +1,3 @@
-@import "mixins/buttons";
-
 //
 // Base styles
 //
@@ -120,6 +118,6 @@
 
 // Future-proof disabling of clicks on `<a>` elements
 a.bqb-btn.disabled,
-fieldset[disabled] a.btn {
+fieldset[disabled] a.bqb-btn {
   pointer-events: none;
 }
