@@ -2,7 +2,7 @@
 
 .bqb-footer {
   padding: 3rem 0;
-
+  
   .footer-navigation {
     .navigation-nav {
       padding-left: 0;
@@ -14,6 +14,12 @@
           font-weight: bold;
           font-size: 1.6rem;
           margin-bottom: 1rem;
+        }
+
+        &.phone {
+          margin: 1rem 0;
+          font-weight: bold;
+          font-size: 1.4rem;
         }
 
         .nav-link {

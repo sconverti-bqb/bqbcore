@@ -1,6 +1,8 @@
 // Header
 
 .bqb-header {
+  margin-bottom: 1.5rem;
+
   .header-brand {
     .brand-tools {
       display: flex;
@@ -122,30 +124,15 @@
       }
     }
 
-    // Dropdown positioning
-
-    &.dropdown-left {
-      .dropdown-menu {
-        left: 0;
-      }
-    }
-
-    &.dropdown-right {
-      .dropdown-menu {
-        right: 0;
-      }
-    }
-
     // Boarding information module
 
     .menu-boarding-info {
       background-color: #082f61;
       padding: .5rem 1.5rem;
       width: 45rem;
+      position: relative;
 
       .boarding-info-wrapper {
-        position: relative;
-
         table {
           font-size: 1.3rem;
           table-layout: fixed;
@@ -196,9 +183,9 @@
         visibility: hidden;
         opacity: 0;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: $transition-base;
         z-index: 1;
         background-color: #082f61;
       }

@@ -11,6 +11,7 @@
 		-ms-touch-action: pan-Y;
 		touch-action: manipulation;
 		-moz-backface-visibility: hidden; /* fix firefox animation glitch */
+		padding-left: 0 !important;
 	}
 
 	.owl-stage:after {
@@ -70,7 +71,7 @@
 	}
 
 	.owl-nav .owl-prev {
-		left: 0;
+		left: 5px;
 	}
 
 	.owl-nav .owl-next {
@@ -78,8 +79,7 @@
 	}
 
 	.owl-nav button.owl-prev,
-	.owl-nav button.owl-next,
-	button.owl-dot {
+	.owl-nav button.owl-next {
 		background: $white;
 		color: #a5a5a5;
 		border: none;
@@ -138,4 +138,47 @@
 /* No Js */
 .no-js .owl-carousel {
 	display: block;
+}
+
+
+// THEME
+
+.owl-nav.disabled + .owl-dots {
+	margin-top: 10px;
+}
+
+.owl-dots {
+	text-align: center;
+	tap-highlight-color: transparent;
+	position: absolute;
+  bottom: 1rem;
+  left: 50%;
+	transform: translate(-50%, 0);
+
+	.owl-dot {
+		display: inline-block;
+		padding: 0;
+    border: 0 none;
+    background-color: transparent;
+		outline: 0;
+
+		span {
+			width: $dot-width;
+			height: $dot-height;
+			margin: $dot-margin;
+			background: $dot-background;
+			display: block;
+			backface-visibility: visible;
+			transition: opacity 200ms ease;
+			border-radius: $dot-rounded;
+			border: 2px solid $white;
+		}
+
+		&.active,
+		&:hover {
+			span {
+				background: $dot-background-active;
+			}
+		}
+	}
 }

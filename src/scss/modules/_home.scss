@@ -1,0 +1,74 @@
+.bqb-home-rows {
+  margin-bottom: 1.5rem;
+
+  .bqb-home-banner {
+    width: 33rem;
+    height: 38rem;
+    padding: 0;
+  }
+
+  &.rows-left {
+    .bqb-home-banner {
+      float: left;
+    }
+  }
+
+  &.rows-right {
+    .bqb-home-banner {
+      float: right;
+    }
+  }
+
+  .bqb-row {
+    .bqb-col-12 {
+      padding-right: 0;
+      padding-left: 10px;
+    }
+
+    .bqb-col-6 {
+      padding-left: 10px;
+      padding-right: 5px;
+
+      &:last-child {
+        padding-right: 15px;
+      }
+    }
+  }
+
+  .bqb-campaign-slider {
+    .owl-item {
+      img {
+        height: 380px;
+      }
+    }
+  }
+
+  .bqb-card-slider {
+    .owl-dots {
+      display: none;
+    }
+  }
+}
+
+// Title Skyscraper
+
+.bqb-skyscraper {
+  padding: .8rem 1.6rem;
+  margin-bottom: .5rem;
+  margin-left: .5rem;
+  background-color: #7ca6da;
+  color: $white;
+  cursor: default;
+  user-select: none;
+
+  a {
+    color: #fff;
+  }
+
+  .skyscraper-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-right: .5rem;
+  }
+}

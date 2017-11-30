@@ -28,31 +28,36 @@
 }())
 
 $(document).ready(function(){
-  $(".bqb-card-slider").owlCarousel({
+  $(".slider-col-12").owlCarousel({
     nav: true,
+    stagePadding: 50,
+    loop: true,
+    responsive : {
+      0: { items: 1 },
+      992: { items: 2 },
+      1200: { items: 3 }
+    }
+  });
+
+  $(".slider-col-6").owlCarousel({
+    nav: true,
+    stagePadding: 50,
+    loop: true,
+    responsive : {
+      0: { items: 1 },
+      1200: { items: 2 }
+    }
   });
 
   $(".bqb-campaign-slider").owlCarousel({
-    nav: true,
-    items: 1,
-  });
-
-  $(function() {
-    $('.nav-link').click(function(e){
-      $('.nav-item').removeClass('show');
-      $(this).closest('.nav-item').toggleClass('show');
-      e.stopPropagation()
-    })
-    $(document).on("click", function(e) {
-      if ($(e.target).is(".nav-item") === false) {
-        $('.nav-item').removeClass("show");
-      }
-    });
+    nav: false,
+    items: 1
   });
 
   $('.nav-item.special .nav-link').click(function(){
+    $('.dropdown-menu li .menu-boarding-info').addClass('loading');
     setTimeout(function(){
       $('.dropdown-menu li .menu-boarding-info').removeClass('loading');
-    }, 2000);
+    }, 5000);
   })
 });

@@ -132,7 +132,14 @@
                             </tr>
                           </table>
                         </div>
-                        <div class="boarding-info-loader">Cargando...</div>
+                        <div class="boarding-info-loader">
+                          <div class="bqb-loader">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                          </div>
+                          <p>Cargando...</p>
+                        </div>
                       </div>
                     </li>
                   </ul>
@@ -148,8 +155,8 @@
     <div class="bqb-container bqb-home-rows rows-left">
       <div class="bqb-col bqb-home-banner ">
         <div class="bqb-campaign-slider owl-carousel">
-          <img src="src/img/banner-01.png" alt="">
-          <img src="src/img/banner-02.png" alt="">
+          <a href="#"><img src="src/img/banner-01.png" alt=""></a>
+          <a href="#"><img src="src/img/banner-02.png" alt=""></a>
         </div>
       </div>
       <div class="bqb-row">
@@ -254,8 +261,8 @@
     <div class="bqb-container bqb-home-rows rows-right">
       <div class="bqb-col bqb-home-banner ">
         <div class="bqb-campaign-slider owl-carousel">
-          <img src="src/img/banner-01.png" alt="">
-          <img src="src/img/banner-02.png" alt="">
+          <a href="#"><img src="src/img/banner-02.png" alt=""></a>
+          <a href="#"><img src="src/img/banner-01.png" alt=""></a>
         </div>
       </div>
       <div class="bqb-row">
@@ -550,377 +557,9 @@
 
         </div>
 
-
       </div>
     </div>
 
-    <div class="bqb-container main">
-
-      <!-- GETTING STARTED -->
-      <div class="bqb-row">
-        <div class="bqb-col-12">
-          <h2 class="section">Modo de uso</h2>
-          <p>BQB Core (o como lo quieran llamar) es un framework de HTML y CSS que contiene los elementos de los sitios de Buquebus y Buquebus Turismo más comunes para que sean reutilizados. En este momento, tiene prioridad por sobre Bootstrap 3 y lo podría reemplazar definitivamente, aunque el modelo de grillas está basado en Bootstrap 4 pensadas para mobile-first y hechas con Flexbox.</p>
-          <div>
-            <h3>Ventajas</h3>
-            <ul>
-              <li style="font-weight: 400;">Mantener en un solo CSS todos los componentes personalizados de la marca, basados en la guía de diseño.</li>
-              <li style="font-weight: 600;">Realizar cambios generales y que se reflejen en todo el sitio.</li>
-              <li style="font-weight: 700;">Mayor prolijidad y consistencia a través de todo el sitio.</li>
-              <li style="font-weight: 800;">Mayor agilidad para detectar errores en implementaciones del lado de desarrollo.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Assets</h3>
-            <p>Al igual que Bootstrap, el framework utiliza un solo CSS, el cual siempre su ultima versión va a estar subida en una URL fija.</p>
-            <div class="highlight"><pre><code data-lang="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.buquebus.com/static/bqbcore/src/css/bqbcore.css&quot;&gt;</code></pre></div>
-            <p>En el caso de se use este framework más Bootstrap, este debe especificarse último por cuestiones de herencia de estilos.</p>
-            <p>BQB Core funciona optimamente con la fuente Open Sans en toda sus variaciones. Esta fuente se debe definir en el HEAD de esta manera:</p>
-            <div class="highlight"><pre><code data-lang="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&quot;&gt;</code></pre></div>
-            <p>Y en el CSS de esta:</p>
-            <div class="highlight"><pre><code data-lang="html">font-family: 'Open Sans', sans-serif;</code></pre></div>
-          </div>
-        </div>
-      </div>
-
-      <hr>
-
-      <!-- BUTTONS -->
-      <div class="bqb-row">
-        <div class="bqb-col-12">
-          <h2 class="section">Grillas</h2>
-          <p>Basadas en las nuevas grillas de Bootstrap 4, este nuevo sistema de grillas tiene una pequeña curva de aprendizaje y varía al metodo de uso de Bootstrap 3, pero a la larga terminarían siendo mejores por utilizar Flexbox y su metodología mobile-first.</p>
-          <ul>
-            <li>Los contenedores padres son <code>.bqb-container</code> o <code>.bqb-container-fluid</code></li>
-            <li>La clase para las filas es <code>.bqb-row</code></li>
-            <li>Las columnas se arman como en Bootstrap pero con el prefijo "bqb". Ejemplo: <code>.bqb-col-md-12</code></li>
-            <li>Junto con el prefijo "bqb", la otra diferencia es que es una grilla mobile-first, por lo que cada media query tiene un <code>min-width</code> en vez de un <code>max-width</code>.</li>
-          </ul>
-          <p>En el caso de quererse usar las grillas de Bootstrap 3, esta no le afectaría en lo absoluto por llevar el prefijo proprietario de Buquebus.</p>
-        </div>
-      </div>
-
-      <hr>
-
-      <!-- BUTTONS -->
-      <div class="bqb-row">
-        <div class="bqb-col-12">
-          <h2 class="section">Botones</h2>
-          <div>
-            <h3>Tagging</h3>
-            <div class="examples">
-              <a class="bqb-btn btn-primary" href="#" role="button">Link</a>
-              <button class="bqb-btn btn-primary" type="submit">Button</button>
-              <input class="bqb-btn btn-primary" type="button" value="Input">
-              <input class="bqb-btn btn-primary" type="submit" value="Submit">
-              <input class="bqb-btn btn-primary" type="reset" value="Reset">
-            </div>
-<div class="highlight"><pre><code data-lang="html">&lt;a class=&quot;bqb-btn btn-primary&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Link&lt;/a&gt;
-&lt;button class=&quot;bqb-btn btn-primary&quot; type=&quot;submit&quot;&gt;Button&lt;/button&gt;
-&lt;input class=&quot;bqb-btn btn-primary&quot; type=&quot;button&quot; value=&quot;Input&quot;&gt;
-&lt;input class=&quot;bqb-btn btn-primary&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
-&lt;input class=&quot;bqb-btn btn-primary&quot; type=&quot;reset&quot; value=&quot;Reset&quot;&gt;</code></pre></div>
-          </div>
-          <div>
-            <h3>Predefinidos</h3>
-            <div class="examples">
-              <button class="bqb-btn btn-default" type="button">Default</button>
-              <button class="bqb-btn btn-primary" type="button">Primario</button>
-              <button class="bqb-btn btn-secondary" type="button">Secundario</button>
-              <button class="bqb-btn btn-navigation" type="button">Navegación</button>
-            </div>
-<div class="highlight"><pre><code data-lang="html">&lt;button class=&quot;bqb-btn btn-default&quot; type=&quot;button&quot;&gt;Default&lt;/button&gt;
-&lt;button class=&quot;bqb-btn btn-primary&quot; type=&quot;button&quot;&gt;Primario&lt;/button&gt;
-&lt;button class=&quot;bqb-btn btn-secondary&quot; type=&quot;button&quot;&gt;Secundario&lt;/button&gt;
-&lt;button class=&quot;bqb-btn btn-navigation&quot; type=&quot;button&quot;&gt;Navegaci&oacute;n&lt;/button&gt;</code></pre></div>
-          </div>
-          <div>
-            <h3>Iconos</h3>
-            <div class="examples">
-              <a class="bqb-btn btn-primary" href="#" role="button">
-                <span class="icon fa fa-medkit" aria-hidden="true"></span>
-                <span>Servicios y asistencias</span>
-              </a>
-            </div>
-<div class="highlight"><pre><code data-lang="html">&lt;a class=&quot;bqb-btn btn-primary&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;
-  &lt;span class=&quot;icon fa fa-medkit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-  &lt;span&gt;Servicios y asistencias&lt;/span&gt;
-&lt;/a&gt;</code></pre></div>
-          </div>
-          <div>
-            <h3>Bloque</h3>
-            <div class="examples">
-              <button type="button" class="bqb-btn btn-primary btn-block">Block level button</button>
-            </div>
-<div class="highlight"><pre><code data-lang="html">&lt;button type=&quot;button&quot; class=&quot;bqb-btn btn-primary btn-block&quot;&gt;Block level button&lt;/button&gt;</code></pre></div>
-          </div>
-          <div>
-            <h3>Ideas / A definir</h3>
-            <ul>
-              <li>Agregar tamaños de botones en ancho (usando min-width)</li>
-              <li>Transiciones en el click como en <a href="https://www.buquebus.com/concierge" target="_blank" rel="noopener">https://www.buquebus.com/concierge</a></li>
-              <li>Botones redondos</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <hr>
-
-      <!-- HEADINGS -->
-      <div class="bqb-row">
-        <div class="bqb-col-12">
-          <div>
-            <h2 class="section">Headings</h2>
-            <p>Pueden usarse con las tags de headings habituales desde el &lt;h1&gt; al &lt;h6&gt;, y también las clases desde .h1 a .h6 cuando no se quiera o no aplique usar el heading tag correspondiente. Ej.: Se reemplaza los heading tags por &lt;p&gt; y &lt;span&gt;.</p>
-            <div class="examples">
-              <h1>Heading 1</h1>
-              <h2>Heading 2</h2>
-              <h3>Heading 3</h3>
-              <h4>Heading 4</h4>
-              <h5>Heading 5</h5>
-              <h6>Heading 6</h6>
-            </div>
-<div class="highlight"><pre><code data-lang="html">code</code></pre></div>
-          </div>
-          <div>
-            <h3>Ideas / A definir</h3>
-            <ul>
-              <li>Tamaños finales de cada heading (pixels o rems)</li>
-              <li>Tamaños de texto aún mayores para destacados</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <hr>
-
-      <!-- BADGES -->
-      <div class="bqb-row">
-        <div class="bqb-col-12">
-          <div>
-            <h2 class="section">Badges</h2>
-            <p>Los badges pueden escalar por su padre inmediato. Por ejemplo, estando dentro de un tag de encabezado.</p>
-            <div class="examples">
-              <h1>Example heading <span class="bqb-badge badge-secondary">New</span></h1>
-              <h2>Example heading <span class="bqb-badge badge-secondary">New</span></h2>
-              <h3>Example heading <span class="bqb-badge badge-secondary">New</span></h3>
-              <h4>Example heading <span class="bqb-badge badge-secondary">New</span></h4>
-              <h5>Example heading <span class="bqb-badge badge-secondary">New</span></h5>
-              <h6>Example heading <span class="bqb-badge badge-secondary">New</span></h6>
-            </div>
-<div class="highlight"><pre><code data-lang="html">code</code></pre></div>
-              <p>También tienen variaciones contextuales, para definirlos de diferente color y forma.</p>
-              <div class="examples">
-                <p>
-                  <span class="bqb-badge badge-primary">Primary</span>
-                  <span class="bqb-badge badge-secondary">Secondary</span>
-                  <span class="bqb-badge badge-success">Success</span>
-                  <span class="bqb-badge badge-danger">Danger</span>
-                  <span class="bqb-badge badge-warning">Warning</span>
-                  <span class="bqb-badge badge-info">Info</span>
-                  <span class="bqb-badge badge-light">Light</span>
-                  <span class="bqb-badge badge-dark">Dark</span>
-                </p>
-                <p>
-                  <span class="bqb-badge badge-pill badge-primary">Primary</span>
-                  <span class="bqb-badge badge-pill badge-secondary">Secondary</span>
-                  <span class="bqb-badge badge-pill badge-success">Success</span>
-                  <span class="bqb-badge badge-pill badge-danger">Danger</span>
-                  <span class="bqb-badge badge-pill badge-warning">Warning</span>
-                  <span class="bqb-badge badge-pill badge-info">Info</span>
-                  <span class="bqb-badge badge-pill badge-light">Light</span>
-                  <span class="bqb-badge badge-pill badge-dark">Dark</span>
-                </p>
-              </div>
-<div class="highlight"><pre><code data-lang="html">code</code></pre></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CHECKBOXES -->
-      <div class="bqb-row">
-        <div class="bqb-col-12">
-          <div>
-            <h2 class="section">Checkboxes / Radio Buttons</h2>
-            <p></p>
-            <div class="examples">
-              example
-            </div>
-<div class="highlight"><pre><code data-lang="html">code</code></pre></div>
-          </div>
-          <div>
-            <h3>Ideas / A definir</h3>
-            <ul>
-              <li>Bootstrap usa los estilos nativos del navegador.</li>
-              <li>Evitar usar plugins para estilizarlos (como iCheck).</li>
-              <li>Definir si usar estilos nativos o estilizar por CSS y que el código sea válido.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- INPUTS -->
-      <div class="bqb-row">
-        <div class="bqb-col-12">
-          <div>
-            <h2 class="section">Inputs</h2>
-            <p></p>
-            <div class="examples">
-              <div class="bqb-form-group">
-                <input class="bqb-form-control form-control-lg" type="text" placeholder="Large input">
-              </div>
-              <div class="bqb-form-group">
-                <input class="bqb-form-control" type="text" placeholder="Default input">
-              </div>
-              <div class="bqb-form-group">
-                <input class="bqb-form-control form-control-sm" type="text" placeholder="Small input">
-              </div>
-            </div>
-<div class="highlight"><pre><code data-lang="html">code</code></pre></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SELECT -->
-      <div class="bqb-row">
-        <div class="bqb-col-12">
-          <div>
-            <h2 class="section">Select</h2>
-            <p></p>
-            <div class="examples">
-              <div class="bqb-form-group">
-                <select class="bqb-select">
-                  <option>Default select</option>
-                </select>
-              </div>
-            </div>
-<div class="highlight"><pre><code data-lang="html">code</code></pre></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- BREADCRUMB -->
-      <div class="bqb-row">
-        <div class="bqb-col-12">
-          <div>
-            <h2 class="section">Breadcrumb (Migas de pan)</h2>
-            <p></p>
-            <div class="examples">
-              <nav class="bqb-breadcrumb">
-                <a class="breadcrumb-item" href="#">Home</a>
-                <a class="breadcrumb-item" href="#">Producto</a>
-                <a class="breadcrumb-item" href="#">Ciudad</a>
-                <span class="breadcrumb-item active">Nivel activo</span>
-              </nav>
-            </div>
-<div class="highlight"><pre><code data-lang="html">code</code></pre></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MODAL -->
-      <div class="bqb-row">
-        <div class="bqb-col-12">
-          <div>
-            <h2 class="section">Modal</h2>
-            <p></p>
-
-            <div class="examples">
-              <button type="button" class="bqb-btn btn-primary" data-toggle="modal" data-target="#exampleModalSM">Abrir modal chico</button>
-              <button type="button" class="bqb-btn btn-primary" data-toggle="modal" data-target="#exampleModal">Abrir modal standard</button>
-              <button type="button" class="bqb-btn btn-primary" data-toggle="modal" data-target="#exampleModalLG">Abrir modal grande</button>
-            </div>
-<div class="highlight"><pre><code data-lang="html">code</code></pre></div>
-
-            <!-- Modal -->
-            <div class="bqb-modal fade" id="exampleModalSM" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <span class="modal-title" id="exampleModalLabel">Titulo del modal</span>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Contenido principal del modal.
-                  </div>
-                  <div class="modal-footer">
-                    Footer del modal (solo de ser necesario).
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="bqb-modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <span class="modal-title" id="exampleModalLabel">Titulo del modal</span>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Contenido principal del modal.
-                  </div>
-                  <div class="modal-footer">
-                    Footer del modal (solo de ser necesario).
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="bqb-modal fade" id="exampleModalLG" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <span class="modal-title" id="exampleModalLabel">Titulo del modal</span>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Contenido principal del modal.
-                  </div>
-                  <div class="modal-footer">
-                    Footer del modal (solo de ser necesario).
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- MODAL LOGIN -->
-            <div class="bqb-modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <span class="modal-title" id="loginModalLabel">Iniciar sesión</span>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Contenido principal del modal.</p>
-                    <div class="bqb-form-group">
-                      <input class="bqb-form-control form-control-lg" type="text" placeholder="Nombre de usuario">
-                    </div>
-                    <div class="bqb-form-group">
-                      <input class="bqb-form-control form-control-lg" type="password" placeholder="Contraseña">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
 
     <!-- Mail Offers -->
     <div class="bqb-mail-offers theme-buquebus">
@@ -1009,9 +648,15 @@
                 <li class="nav-item phone">Tel.: +54 11 4316-6530</li>
                 <li class="nav-item">
                   <p>Seguinos:</p>
-                  <a href="#">t</a>
-                  <a href="#">i</a>
-                  <a href="#">f</a>
+                  <a href="#">
+                    <svg viewBox="0 0 32 32" role="img" aria-label="Twitter" focusable="false" style="height: 2rem;width: 2rem;fill: white;"><path fill-rule="evenodd" d="M31 6.359c-1.16.493-2.32.821-3.546.952 1.293-.755 2.22-1.872 2.718-3.384a13.048 13.048 0 0 1-3.913 1.512c-1.226-1.282-2.75-1.939-4.51-1.939-3.413 0-6.167 2.728-6.167 6.115 0 .493.067.953.166 1.38-4.94-.23-9.513-2.596-12.664-6.378-.563.954-.861 1.972-.861 3.089 0 2.07 1.027 3.914 2.75 5.063-.995-.032-1.922-.295-2.816-.755v.066c0 2.89 2.12 5.424 4.94 5.982-.63.165-1.16.231-1.624.231-.298 0-.696-.033-1.127-.132a6.074 6.074 0 0 0 5.737 4.242c-2.22 1.742-4.775 2.63-7.658 2.63-.563 0-1.06-.034-1.425-.1 2.85 1.841 6 2.76 9.413 2.76 7.294 0 12.83-4.012 15.514-9.302 1.359-2.661 2.021-5.359 2.021-8.086v-.46c-.033-.165-.033-.296-.033-.329A12.663 12.663 0 0 0 31 6.36"></path></svg>
+                  </a>
+                  <a href="#">
+                    <svg viewBox="0 0 24 24" role="img" aria-label="Instagram" focusable="false" style="height: 2rem;width: 2rem;fill: white;"><path d="M23.094.906C22.489.301 21.767 0 20.922 0H3.078C2.233 0 1.511.301.906.906.301 1.511 0 2.233 0 3.078v17.844c0 .845.301 1.567.906 2.172.605.605 1.327.906 2.172.906h17.844c.845 0 1.567-.301 2.172-.906.605-.605.906-1.327.906-2.172V3.078c0-.845-.301-1.567-.906-2.172zM8.618 8.65c.943-.911 2.077-1.367 3.4-1.367 1.331 0 2.47.456 3.413 1.367.943.91 1.413 2.013 1.413 3.303 0 1.291-.473 2.393-1.413 3.304-.943.911-2.082 1.367-3.414 1.367-1.322 0-2.456-.456-3.399-1.367-.943-.91-1.413-2.013-1.413-3.304 0-1.29.47-2.392 1.413-3.303zm12.664 11.632c0 .27-.093.498-.277.681a.923.923 0 0 1-.671.275H3.632a.927.927 0 0 1-.681-.275.921.921 0 0 1-.274-.68V10.155H4.88a6.737 6.737 0 0 0-.314 2.047c0 2.001.73 3.708 2.187 5.119 1.457 1.413 3.213 2.118 5.266 2.118a7.5 7.5 0 0 0 3.749-.97 7.288 7.288 0 0 0 2.718-2.632 6.93 6.93 0 0 0 1-3.632c0-.708-.106-1.391-.314-2.048h2.109v10.124zm0-13.954c0 .301-.106.559-.314.767a1.046 1.046 0 0 1-.766.313h-2.719c-.303 0-.558-.105-.766-.313a1.046 1.046 0 0 1-.314-.767V3.75c0-.291.106-.543.314-.756.208-.213.465-.321.766-.321h2.719c.303 0 .558.108.766.32.208.214.314.466.314.757v2.58z" fill-rule="evenodd"></path></svg>
+                  </a>
+                  <a href="#">
+                    <svg viewBox="0 0 32 32" role="img" aria-label="Facebook" focusable="false" style="height: 2rem;width: 2rem;fill: white;"><path fill-rule="evenodd" d="M8 14.408v-4.165c0-.424.35-.812.77-.812h2.519V7.347c0-4.84 2.484-7.311 7.42-7.347 1.645 0 3.219.212 4.692.636.455.141.63.424.595.883l-.56 4.062c-.035.178-.14.354-.315.531-.21.105-.42.176-.63.14-.875-.247-1.784-.352-2.799-.352-1.399 0-1.61.283-1.61 1.73v1.8H22.6c.42 0 .805.423.805.883l-.349 4.17c0 .422-.35.705-.77.705H18.08v16c0 .424-.349.812-.769.812h-5.213c-.42 0-.804-.388-.804-.812V15.185h-2.52A.781.781 0 0 1 8 14.408"></path></svg>
+                  </a>
                 </li>
               </ul>
             </div>
