@@ -5,6 +5,10 @@
     width: 33rem;
     height: 38rem;
     padding: 0;
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
   }
 
   &.rows-left {
@@ -16,22 +20,6 @@
   &.rows-right {
     .bqb-home-banner {
       float: right;
-    }
-  }
-
-  .bqb-row {
-    .bqb-col-12 {
-      padding-right: 0;
-      padding-left: 10px;
-    }
-
-    .bqb-col-6 {
-      padding-left: 10px;
-      padding-right: 5px;
-
-      &:last-child {
-        padding-right: 15px;
-      }
     }
   }
 
@@ -71,4 +59,10 @@
     text-transform: uppercase;
     margin-right: .5rem;
   }
+
+  &.skyscraper-pink { background-color: #bf337b; }
+
+  &.skyscraper-yellow { background-color: #e7ba00; }
+
+  &.skyscraper-orange { background-color: #cf6f2a; }
 }

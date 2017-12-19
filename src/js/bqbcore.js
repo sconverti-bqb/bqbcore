@@ -30,7 +30,7 @@
 $(document).ready(function(){
   $(".slider-col-12").owlCarousel({
     nav: true,
-    stagePadding: 50,
+    dots: false,
     loop: true,
     responsive : {
       0: { items: 1 },
@@ -41,7 +41,7 @@ $(document).ready(function(){
 
   $(".slider-col-6").owlCarousel({
     nav: true,
-    stagePadding: 50,
+    dots: false,
     loop: true,
     responsive : {
       0: { items: 1 },
@@ -51,13 +51,41 @@ $(document).ready(function(){
 
   $(".bqb-campaign-slider").owlCarousel({
     nav: false,
+    dots: true,
     items: 1
   });
+
+  $(".bqb-payment-options .bqb-carousel").owlCarousel({
+    nav: true,
+    dots: false,
+    loop: true,
+    responsive : {
+      0: { items: 2 },
+      576: { items: 3 },
+      768: { items: 4 },
+      996: { items: 5 },
+      1200: { items: 6 }
+    }
+  });
+
+  $('.brand-heading .heading-hamburguer').click(function(){
+    $('.header-navigation').toggleClass('show');
+    $('body').toggleClass('hamburguer-open');
+  })
+
+  $('.footer-navigation .navigation-title').click(function(){
+    $(this).parent().toggleClass('open');
+    $(this).find('i').toggleClass('bqb-icon-chevron-up bqb-icon-chevron-down');
+  })
 
   $('.nav-item.special .nav-link').click(function(){
     $('.dropdown-menu li .menu-boarding-info').addClass('loading');
     setTimeout(function(){
       $('.dropdown-menu li .menu-boarding-info').removeClass('loading');
     }, 5000);
+  })
+
+  $('.bqb-mail-offers .bqb-btn').click(function(){
+    $(this).closest('.bqb-form-control').tooltip('show');
   })
 });

@@ -1,0 +1,74 @@
+.bqb-payment-options {
+  background-color: $white;
+  margin-bottom: 3rem;
+
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 1rem;
+  }
+
+  .payment-options-title {
+    margin: 1.5rem;
+    text-align: center;
+
+    @include media-breakpoint-down(lg) {
+      display: flex;
+      align-items: center;
+      flex-flow: column nowrap;
+      margin: 1rem;
+    }
+
+    span {
+      display: block;
+      font-weight: bold;
+    }
+
+    img {
+      @include media-breakpoint-down(lg) {
+        display: block;
+      }
+    }
+  }
+
+  .payment-options-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .item-logo {
+      height: 4.8rem;
+      display: flex;
+      margin-bottom: .5rem;
+      align-items: center;
+    }
+  }
+
+  .bqb-carousel {
+    height: 100%;
+
+    .owl-stage,
+    .owl-stage-outer,
+    .owl-item,
+    .payment-options-item {
+      height: 100%;
+    }
+
+    .owl-item {
+      img {
+        width: auto;
+      }
+    }
+
+    .owl-nav {
+      button {
+        &.owl-prev,
+        &.owl-next {
+          background: transparent;
+          color: #333;
+          box-shadow: none;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

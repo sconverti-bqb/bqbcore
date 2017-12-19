@@ -1,9 +1,44 @@
 // Header
 
 .bqb-header {
-  margin-bottom: 1.5rem;
-
   .header-brand {
+    .brand-heading {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-start;
+
+      .heading-logo {
+        display: inline-block;
+        vertical-align: middle;
+        height: 4rem;
+
+        @include media-breakpoint-down(lg) {
+          height: 3rem;
+        }
+
+        svg {
+          height: 100%;
+        }
+      }
+
+      .heading-hamburguer {
+        display: none;
+
+        @include media-breakpoint-down(lg) {
+          display: inline-block;
+          color: $white;
+          font-size: 2.5rem;
+          margin-right: 1.5rem;
+          text-decoration: none;
+        }
+
+        .bqb-icon-hamburguer-menu {
+          vertical-align: middle;
+        }
+      }
+    }
+
     .brand-tools {
       display: flex;
       align-items: center;
@@ -21,6 +56,10 @@
           margin: 0 3rem;
           align-items: center;
 
+          @include media-breakpoint-down(lg) {
+            margin: 0 .5rem;
+          }
+
           &:first-child {
             margin-left: 0;
           }
@@ -29,42 +68,146 @@
             margin: 0;
           }
 
-          a {
+          > a {
             color: $white;
+
+            &:hover,
+            &:focus {
+              text-decoration: none;
+              color: #00baf2;
+            }
           }
-        }
-      }
 
-      .tools-item-help {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid $white;
-        border-radius: 1.5rem;
-        height: 3rem;
-        text-align: center;
-        width: 3rem;
-        user-select: none;
+          &.tools-item-language {
+            > a {
+              display: flex;
+              align-items: center;
+            }
 
-        &:hover,
-        &:focus {
-          text-decoration: none;
-          background-color: #00baf2;
+            .language-flag {
+              margin-right: .5rem;
+            }
+
+            .language-text {
+              @include media-breakpoint-down(lg) {
+                display: none;
+              }
+            }
+
+            [class^="bqb-icon-"], [class*=" bqb-icon-"] {
+              @include media-breakpoint-down(lg) {
+                display: none;
+              }
+            }
+          }
+
+          &.tools-item-account {
+            @include media-breakpoint-down(lg) {
+              margin-right: 0;
+              font-size: 2rem;
+            }
+
+            a {
+              display: flex;
+              align-items: center;
+            }
+
+            i {
+              @include media-breakpoint-down(lg) {
+                margin: 0;
+              }
+            }
+          }
+
+          &.tools-item-help {
+            a {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 1px solid $white;
+              border-radius: 1.5rem;
+              height: 3rem;
+              text-align: center;
+              width: 3rem;
+              user-select: none;
+
+              &:hover,
+              &:focus {
+                text-decoration: none;
+                background-color: #00baf2;
+                color: $white;
+              }
+            }
+          }
         }
       }
     }
   }
 
   .header-navigation {
+    @include media-breakpoint-down(lg) {
+      position: fixed;
+      top: 4.6rem;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: $zindex-fixed;
+      visibility: hidden;
+      opacity: 0;
+      transition: $transition-base;
+      overflow: auto;
+    }
+
+    &.show {
+      @include media-breakpoint-down(lg) {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .navigation-nav-responsive {
+      display: none;
+
+      @include media-breakpoint-down(lg) {
+        display: block;
+        margin: 1.5rem 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 2rem;
+
+        li {
+          &.nav-responsive-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+          }
+
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+
     .navigation-nav {
       padding-left: 0;
       margin-bottom: 0;
       margin-left: -1.5rem;
       list-style: none;
 
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+
       .nav-item {
         display: inline-block;
         white-space: nowrap;
+
+        @include media-breakpoint-down(lg) {
+          display: block;
+        }
 
         &:first-child {
           padding-left: 0;
@@ -74,16 +217,28 @@
           padding-left: 0;
         }
 
-        &.special {
-          .nav-link {
-            background-color: $header-buquebus-special;
-          }
-        }
-
         .nav-link {
           display: block;
           padding: 1rem 1.5rem;
           @include transition ();
+
+          &:hover,
+          &:focus {
+            background-color: #082f61;
+            text-decoration: none;
+          }
+        }
+
+        &.special {
+          .nav-link {
+            background-color: $header-buquebus-special;
+
+            &:hover,
+            &:focus {
+              background-color: $header-buquebus-special;
+              text-decoration: none;
+            }
+          }
         }
       }
     }
@@ -103,6 +258,14 @@
       list-style: none;
       z-index: $zindex-dropdown;
       background-color: #0b3872;
+      top: 100%;
+      left: 0;
+      float: left;
+
+      &.dropdown-menu-right {
+        right: 0;
+        left: auto;
+      }
 
       a {
         display: block;
@@ -116,6 +279,8 @@
         }
       }
     }
+
+
 
     &.show {
       .dropdown-menu {
@@ -207,10 +372,18 @@
 
     .header-brand {
       padding: $header-buquebus-brand-padding;
+
+      @include media-breakpoint-down(lg) {
+        padding: .5rem 0;
+      }
     }
 
     .header-navigation {
       background-color: $header-buquebus-navigation-bg;
+
+      @include media-breakpoint-down(lg) {
+        background-color: $header-buquebus-bg;
+      }
 
       .navigation-nav {
         .nav-item {
@@ -221,18 +394,12 @@
       }
     }
   }
+}
 
-  // Turismo Theme
-  &.header-turismo {
-    background-color: $header-turismo-bg;
-    color: $header-turismo-color;
+// Body disabled while Hamburguer Menu active
 
-    .header-brand {
-      padding: $header-turismo-brand-padding;
-    }
-
-    .header-navigation {
-      background-color: $header-turismo-navigation-bg;
-    }
+body {
+  &.hamburguer-open {
+    overflow: hidden;
   }
 }

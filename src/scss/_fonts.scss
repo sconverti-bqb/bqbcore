@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'BQB Core Icons';
+  src: url('#{$bqb-icon-path}/BQB.eot?wb91bl');
+  src: url('#{$bqb-icon-path}/BQB.eot?wb91bl#iefix') format('embedded-opentype'),
+       url('#{$bqb-icon-path}/BQB.ttf?wb91bl') format('truetype'),
+       url('#{$bqb-icon-path}/BQB.woff?wb91bl') format('woff'),
+       url('#{$bqb-icon-path}/BQB.svg?wb91bl#BQB') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="bqb-icon-"], [class*=" bqb-icon-"] {
+  // Use !important to prevent issues with browser extensions that change fonts
+  font-family: 'BQB Core Icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bqb-icon-margin-left {
+  margin-left: .5rem;
+}
+
+.bqb-icon-margin-right {
+  margin-right: .5rem;
+}
+
+.bqb-icon-hamburguer-menu {
+  &:before {
+    content: $bqb-icon-hamburguer-menu;
+  }
+}
+.bqb-icon-user {
+  &:before {
+    content: $bqb-icon-user;
+  }
+}
+.bqb-icon-chevron-left {
+  &:before {
+    content: $bqb-icon-chevron-left;
+  }
+}
+.bqb-icon-chevron-right {
+  &:before {
+    content: $bqb-icon-chevron-right;
+  }
+}
+.bqb-icon-chevron-up {
+  &:before {
+    content: $bqb-icon-chevron-up;
+  }
+}
+.bqb-icon-chevron-down {
+  &:before {
+    content: $bqb-icon-chevron-down;
+  }
+}
+.bqb-icon-phone {
+  &:before {
+    content: $bqb-icon-phone;
+  }
+}
+.bqb-icon-google {
+  &:before {
+    content: $bqb-icon-google;
+  }
+}
+.bqb-icon-facebook {
+  &:before {
+    content: $bqb-icon-facebook;
+  }
+}
+.bqb-icon-instagram {
+  &:before {
+    content: $bqb-icon-instagram;
+  }
+}
+.bqb-icon-twitter {
+  &:before {
+    content: $bqb-icon-twitter;
+  }
+}

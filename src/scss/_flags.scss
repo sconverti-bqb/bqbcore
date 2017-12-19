@@ -1,0 +1,20 @@
+/*!
+ * Generated with CSS Flag Sprite generator (https://www.flag-sprites.com/)
+ */
+
+.bqb-flag {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: url('../img/flags.png') no-repeat;
+    border-radius: 1rem;
+}
+
+
+.bqb-flag.flag-ar {
+    background-position: 0 0;
+}
+
+.bqb-flag.flag-uy {
+    background-position: -20px 0;
+}

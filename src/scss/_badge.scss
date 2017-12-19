@@ -14,8 +14,6 @@
   white-space: nowrap;
   vertical-align: baseline;
   @include border-radius();
-  user-select: none;
-  cursor: default;
 
   // Empty badges collapse automatically
   &:empty {
