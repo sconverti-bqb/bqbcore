@@ -16,6 +16,13 @@
     box-shadow: 0 1px 6px rgba(164,163,163,0.6);
     transition: $transition-base;
   }
+
+  // Background overlay
+
+  &.card-background {
+    background-position: center center;
+    background-size: cover;
+  }
 }
 
 .card-body {
@@ -142,7 +149,9 @@
   margin-left: -($card-spacer-x / 2);
 }
 
-// Card image
+// Card image background and overlay
+
+
 .card-img-overlay {
   position: absolute;
   top: 0;
@@ -150,7 +159,15 @@
   bottom: 0;
   left: 0;
   padding: $card-img-overlay-padding;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: $white;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
+
+// Card image
 
 .card-img {
   width: 100%;

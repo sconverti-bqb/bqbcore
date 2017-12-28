@@ -62,8 +62,8 @@ $(document).ready(function(){
     responsive : {
       0: { items: 2 },
       576: { items: 3 },
-      768: { items: 4 },
-      996: { items: 5 },
+      768: { items: 2 },
+      992: { items: 4 },
       1200: { items: 6 }
     }
   });
@@ -86,6 +86,9 @@ $(document).ready(function(){
   })
 
   $('.bqb-mail-offers .bqb-btn').click(function(){
-    $(this).closest('.bqb-form-control').tooltip('show');
+    $(this).closest('.bqb-mail-offers').addClass('sent');
+    setTimeout(function(){
+      $('.bqb-mail-offers').removeClass('sent');
+    }, 5000);
   })
 });

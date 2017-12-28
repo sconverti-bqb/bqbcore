@@ -628,16 +628,16 @@ $jumbotron-bg:                   $gray-200 !default;
 
 // Cards
 
-$card-spacer-y:            .5rem !default;
-$card-spacer-x:            1.5rem !default;
-$card-border-width:        $border-width !default;
-$card-border-radius:       $border-radius !default;
-$card-border-color:        rgba($black,.125) !default;
-$card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
-$card-cap-bg:              rgba($black, .03) !default;
-$card-bg:                  $white !default;
+$card-spacer-y:             .5rem !default;
+$card-spacer-x:             1.5rem !default;
+$card-border-width:         $border-width !default;
+$card-border-radius:        $border-radius !default;
+$card-border-color:         rgba($black,.125) !default;
+$card-inner-border-radius:  calc(#{$card-border-radius} - #{$card-border-width}) !default;
+$card-cap-bg:               rgba($black, .03) !default;
+$card-bg:                   $white !default;
 
-$card-img-overlay-padding: 1.25rem !default;
+$card-img-overlay-padding:  1rem !default;
 
 $card-group-margin:         ($grid-gutter-width / 2) !default;
 $card-deck-margin:          $card-group-margin !default;
@@ -825,14 +825,15 @@ $dot-background-active:	  $white !default;
 
 $bqb-icon-path: "../fonts" !default;
 
+$bqb-icon-check-circle: "\e901";
+$bqb-icon-phone-square: "\e907";
+$bqb-icon-facebook: "\e903";
+$bqb-icon-google: "\e904";
+$bqb-icon-instagram: "\e905";
+$bqb-icon-twitter: "\e906";
+$bqb-icon-user-circle: "\e902";
 $bqb-icon-hamburguer-menu: "\e900";
-$bqb-icon-user: "\f007";
 $bqb-icon-chevron-left: "\f053";
 $bqb-icon-chevron-right: "\f054";
 $bqb-icon-chevron-up: "\f077";
 $bqb-icon-chevron-down: "\f078";
-$bqb-icon-phone: "\f095";
-$bqb-icon-google: "\ea88";
-$bqb-icon-facebook: "\ea90";
-$bqb-icon-instagram: "\ea92";
-$bqb-icon-twitter: "\ea96";

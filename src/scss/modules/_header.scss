@@ -78,6 +78,13 @@
             }
           }
 
+          &.tools-item-phone,
+          &.tools-item-account {
+            i {
+              font-size: 2rem;
+            }
+          }
+
           &.tools-item-language {
             > a {
               display: flex;
@@ -85,7 +92,11 @@
             }
 
             .language-flag {
-              margin-right: .5rem;
+              margin-right: 1rem;
+
+              @include media-breakpoint-down(lg) {
+                margin-right: .5rem;
+              }
             }
 
             .language-text {
@@ -173,21 +184,39 @@
         margin: 1.5rem 0;
       }
 
+      .nav-responsive-title {
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+
+      div.nav-responsive-title {
+        margin-bottom: 1rem;
+        margin-left: -15px;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $white;
+      }
+
       ul {
         list-style: none;
         padding: 0;
         margin-bottom: 2rem;
 
-        li {
-          &.nav-responsive-title {
-            font-size: 1.6rem;
-            font-weight: bold;
-          }
+        &.bqb-row {
+          margin-left: -30px;
+        }
 
+        li {
           a {
             color: $white;
           }
         }
+      }
+
+      ul.nav-responsive-boarding-info {
+        margin-left: -15px;
+        background-color: #00baf2;
+        padding: 1rem 0;
+        text-align: center;
       }
     }
 
