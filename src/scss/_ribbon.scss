@@ -1,0 +1,15 @@
+.bqb-ribbon {
+  padding: .8rem 1.2rem;
+  color: $white;
+  background-color: #e83939;
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 25rem;
+  cursor: default;
+  font-size: 1.4rem;
+  user-select: none;
+  text-align: right;
+  line-height: 1;
+  white-space: nowrap;
+}

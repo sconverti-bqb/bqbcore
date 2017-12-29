@@ -71,6 +71,10 @@
           color: #333;
           box-shadow: none;
           padding: 0;
+
+          &:hover {
+            box-shadow: none;
+          }
         }
       }
     }

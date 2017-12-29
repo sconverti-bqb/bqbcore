@@ -84,11 +84,4 @@ $(document).ready(function(){
       $('.dropdown-menu li .menu-boarding-info').removeClass('loading');
     }, 5000);
   })
-
-  $('.bqb-mail-offers .bqb-btn').click(function(){
-    $(this).closest('.bqb-mail-offers').addClass('sent');
-    setTimeout(function(){
-      $('.bqb-mail-offers').removeClass('sent');
-    }, 5000);
-  })
 });

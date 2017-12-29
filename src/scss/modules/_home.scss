@@ -12,12 +12,26 @@
   }
 
   &.rows-left {
+    .bqb-row {
+      > div {
+        @include media-breakpoint-up(lg) {
+          padding-right: 0;
+        }
+      }
+    }
     .bqb-home-banner {
       float: left;
     }
   }
 
   &.rows-right {
+    .bqb-row {
+      > div {
+        @include media-breakpoint-up(lg) {
+          padding-left: 0;
+        }
+      }
+    }
     .bqb-home-banner {
       float: right;
     }

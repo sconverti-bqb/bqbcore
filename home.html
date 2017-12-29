@@ -243,14 +243,14 @@
       </div>
     </header>
 
-    <!-- VIDEO MODULE -->
+    <!-- VIDEO MODULE
     <div class="bqb-video-search">
       <video playsinline autoplay muted loop>
         <!-- video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" -->
         <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-        <source src="./src/videos/video_search.mp4" type="video/mp4">
+          <!--  <source src="./src/videos/video_search.mp4" type="video/mp4">
       </video>
-    </div>
+    </div>  -->
 
     <!-- PAYMENT OPTIONS MODULE -->
     <div class="bqb-payment-options">
@@ -346,7 +346,9 @@
 
               <!-- CARD -->
               <div class="bqb-card">
-                <div class="card-img" style="background-image:url('https://www.buquebus.com/static/abonos/imagenes/PuntaSimple1.jpg')"></div>
+                <div class="card-img" style="background-image:url('https://www.buquebus.com/static/abonos/imagenes/PuntaSimple1.jpg')">
+                  <div class="bqb-ribbon">Año nuevo en Montevideo</div>
+                </div>
                 <div class="card-body">
                   <span class="card-title">Paquetes a Montevideo y Punta del Este</span>
                   <div class="card-price">
@@ -413,6 +415,22 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </div>
+
+    <!-- BANNERS MODULE -->
+    <div class="bqb-container bqb-home-rows">
+      <div class="bqb-row">
+        <div class="bqb-col-6">
+          <a href="#">
+            <img src="./src/img/6col.jpg" style="width: 100%;">
+          </a>
+        </div>
+        <div class="bqb-col-6">
+          <a href="#">
+            <img src="./src/img/6col_2.jpg" style="width: 100%;">
+          </a>
         </div>
       </div>
     </div>
@@ -523,8 +541,19 @@
       </div>
     </div>
 
+    <!-- BANNERS MODULE -->
+    <div class="bqb-container bqb-home-rows">
+      <div class="bqb-row">
+        <div class="bqb-col-12">
+          <a href="#">
+            <img src="./src/img/12col.jpg" style="width: 100%;">
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- HOME MODULE -->
-    <div class="bqb-container bqb-home-rows rows-left">
+    <div class="bqb-container bqb-home-rows">
       <div class="bqb-row">
 
         <div class="bqb-col-12 bqb-col-lg-6">
@@ -721,27 +750,8 @@
     </div>
 
     <!-- BANNERS MODULE -->
-    <div class="bqb-container">
+    <div class="bqb-container bqb-home-rows">
       <div class="bqb-row">
-        <div class="bqb-col-12">
-          <a href="#">
-            <img src="./src/img/12col.jpg" style="width: 100%;margin-bottom: 1rem;">
-          </a>
-        </div>
-      </div>
-      <div class="bqb-row">
-        <div class="bqb-col-6">
-          <a href="#">
-            <img src="./src/img/6col.jpg" style="width: 100%;">
-          </a>
-        </div>
-        <div class="bqb-col-6">
-          <a href="#">
-            <img src="./src/img/6col_2.jpg" style="width: 100%;">
-          </a>
-        </div>
-      </div>
-      <div class="bqb-row" style="margin-top: 1rem;">
         <div class="bqb-col-4">
           <a href="#">
             <img src="./src/img/3col.jpg" style="width: 100%;">
@@ -766,7 +776,7 @@
         <div class="bqb-row">
           <div class="bqb-col-xl-2"></div>
           <div class="bqb-col-12 bqb-col-xl-8">
-            <div class="form-inline">
+            <form class="form-inline" id="needs-validation" novalidate>
               <div class="offers-heading">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAC6UlEQVRYhe2XS0hUYRTHf/fO+EJqtDv5yiy1lGqiIqUHuJvAqIVUhGBRCK2CwFYaREhQboJqURDpJnBRSBK0CIygRYIVuowetMjUMR9jvubO434tdEZnnMc3jtcI+q/uPd/hnN/9XuceBRn1jF8FmoHNUUb7gcs4tV6pWHGkSIA0Au0JvKaBSpzacCowqoTPRQmfDUBdKiAgB5MmGSs/FRCQg3meahJZycDcAR4DwmQWCRinFsCpXQLswAHgo1kwVmlPpzYBTNAzPrNuMMJh28XCyagEciLHTw593vOyqGJFoPbep/WNDtv+CLOCIewERAbzgbEpr+HX/WIMeAc8yR/T56PCCIdNAx4AZ+PRF3umo9oLZsYrFz8gXF6DiSkf/vAddwG47rJn1OWP6aFlVxdBioC+RCBJSzf45V4BElQx8MplzygKwQiHTQW6gLI1BQFmpn2JjqAGtIRggHrg8FqDEBDMxZiSCJ1YDnM+mRzZfm9Ue1rAF24wpK+lrcEHK3AoGZiDrm9QcWSFvXLka9i7VyvnWk2DTEgrNQ2P8CuvFeGwJXez5m5BaeqCjXkh05Uvfdx7eA4Mf8j2o+QoJac7koks5C+9oCZ/ItpqeV91isHcQhxDn9jZ/yIMZDWqKvYqycMAzLmpfttBdUrpw0DoLNWlCqWpqt2m01mqA3JV2zSd2a5zv2TpdFrxGKYkyp4ch3lPzHFnuUFrngefvmSzMmMOzCYxCO7Z6IOFFm7leJiNqP/mLZNqgDVK+EILfbujz5iJe0Zws3Q4HEgL8MERe+lM3cB70z0LQFkq2L10FwwyMupCjZF1dfdMkkDdZd9D735/gJFRFwV5+RgR21VFMf9HO1JBoMgZUklX3qw3TCwgKxblGJk8w8dxhFjZsCkWC3HbYMNAiGUTrqqoikpmJlnuyYQFy/17ipwdFQqgJ+y1W5pbB4B9cVyabrfduJsojoz+em1arv8wsfTPwcTrrX3AwBqx8AeHUeZkvMvf1gAAAABJRU5ErkJggg==" alt="" class="offers-img">
                 <div class="offers-text">
@@ -774,10 +784,11 @@
                 </div>
               </div>
               <div class="bqb-form-group">
-                <input class="bqb-form-control" type="text" placeholder="Ingresá tu Email">
+                <input class="bqb-form-control" type="text" placeholder="Ingresá tu Email" required>
+                <div class="invalid-tooltip">Por favor, ingresá un email válido</div>
               </div>
               <input class="bqb-btn btn-primary" type="submit" value="Suscribirme">
-            </div>
+            </form>
 
             <div class="offers-success">
               <div class="success-text">
@@ -913,5 +924,25 @@
     <script src="src/js/bqbcore.min.js"></script>
     <script src="src/js/owl.carousel.min.js"></script>
     <script src="src/js/bqbcore.js"></script>
+
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          var form = document.getElementById('needs-validation');
+          form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            if (form.checkValidity() === true) {
+              $('.bqb-mail-offers').addClass('sent');
+            }
+            form.classList.add('was-validated');
+          }, false);
+        }, false);
+      })();
+    </script>
+
   </body>
 </html>
