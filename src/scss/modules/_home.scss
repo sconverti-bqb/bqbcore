@@ -40,7 +40,53 @@
   .bqb-campaign-slider {
     .owl-item {
       img {
-        height: 380px;
+        height: 37rem;
+      }
+    }
+  }
+
+  .bqb-banner-slider {
+    .owl-item {
+      img {
+        height: 15rem;
+
+        @include media-breakpoint-down(lg) {
+          height: 9rem;
+        }
+      }
+    }
+    .owl-nav {
+      visibility: hidden;
+      opacity: 0;
+      transition: $transition-fade;
+    }
+    .owl-nav button.owl-prev,
+    .owl-nav button.owl-next {
+      transform: none;
+      border-radius: unset;
+      top: 0;
+      box-shadow: unset;
+      background-color: rgba(0,0,0,0.6);
+      height: auto;
+      bottom: 0;
+
+      &:hover {
+        box-shadow: unset;
+      }
+    }
+
+    .owl-nav button.owl-prev {
+      left: 0;
+    }
+
+    .owl-nav button.owl-next {
+      right: 0;
+    }
+
+    &:hover {
+      .owl-nav {
+        visibility: visible;
+        opacity: 1;
       }
     }
   }
@@ -55,16 +101,12 @@
 // Title Skyscraper
 
 .bqb-skyscraper {
-  padding: .8rem 1.6rem;
+  padding: 0 .5rem;
   margin: 0 0 .5rem 0;
-  background-color: #7ca6da;
-  color: $white;
+  // background-color: #7ca6da;
+  color: #333;
   cursor: default;
   user-select: none;
-
-  a {
-    color: #fff;
-  }
 
   .skyscraper-title {
     font-size: 2rem;
@@ -73,11 +115,11 @@
     margin-right: .5rem;
   }
 
-  &.skyscraper-pink { background-color: #bf337b; }
+  // &.skyscraper-pink { background-color: #bf337b; }
 
-  &.skyscraper-yellow { background-color: #e7ba00; }
+  // &.skyscraper-yellow { background-color: #e7ba00; }
 
-  &.skyscraper-orange { background-color: #cf6f2a; }
+  // &.skyscraper-orange { background-color: #cf6f2a; }
 }
 
 // Video module

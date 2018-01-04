@@ -47,6 +47,9 @@
   margin-top: -0.5rem;
   margin-bottom: 0;
   color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   span {
     vertical-align: middle;

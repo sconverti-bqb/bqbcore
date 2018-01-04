@@ -46,9 +46,10 @@
     margin-right: .5rem;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     height: 4.5rem;
     line-height: 4.4rem;
+    font-size: 1.6rem;
   }
 
   //
