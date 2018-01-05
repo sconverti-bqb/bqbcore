@@ -55,9 +55,9 @@ $(document).ready(function(){
     items: 1
   });
 
-  $(".bqb-banner-slider.slider-one-items").owlCarousel({
-    nav: true,
-    dots: false,
+  $(".bqb-banner-slider").owlCarousel({
+    nav: false,
+    dots: true,
     loop: true,
     items: 1,
     margin: 10,
@@ -66,37 +66,9 @@ $(document).ready(function(){
     autoplayHoverPause: true
   });
 
-  $(".bqb-banner-slider.slider-two-items").owlCarousel({
-    nav: true,
-    dots: false,
-    loop: true,
-    responsive : {
-      0: { items: 1 },
-      1200: { items: 2 }
-    },
-    margin: 10,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true
-  });
-
-  $(".bqb-banner-slider.slider-three-items").owlCarousel({
-    nav: true,
-    dots: false,
-    loop: true,
-    responsive : {
-      0: { items: 1 },
-      1200: { items: 3 }
-    },
-    margin: 10,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true
-  });
-
   $(".bqb-payment-options .bqb-carousel").owlCarousel({
     nav: true,
-    dots: false,
+    dots: true,
     loop: true,
     responsive : {
       0: { items: 2 },
@@ -124,3 +96,19 @@ $(document).ready(function(){
     }, 5000);
   })
 });
+
+(function() {
+  'use strict';
+
+  window.addEventListener('load', function() {
+    var form = document.getElementById('needs-validation');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (form.checkValidity() === true) {
+        $('#mailOffersModal').modal()
+      }
+      form.classList.add('was-validated');
+    }, false);
+  }, false);
+})();
