@@ -1,0 +1,186 @@
+.bqb-modal-login {
+  .modal-form {
+    padding: 1rem 2.5rem 1rem 1rem;
+
+    @include media-breakpoint-down(md) {
+      padding: 1rem;
+    }
+
+    .login-wrapper {
+      position: relative;
+      overflow: hidden;
+      height: 42rem;
+
+      .panel {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: none;
+        z-index: -1;
+
+        // Prevent flickering of the screen when starting an animation
+        // http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css
+        backface-visibility: hidden;
+
+        &.current,
+        &.exit {
+          display: block;
+          z-index: 2;
+        }
+
+        &.enter {
+          display: block;
+        }
+      }
+    }
+
+    .login-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 1rem;
+      user-select: none;
+      cursor: default;
+      font-size: 1.4rem;
+
+      span {
+        color: #333;
+        background: $white;
+        margin: 0 1rem;
+      }
+
+      &:before,
+      &:after {
+        background: #e5e5e5;
+        height: .1rem;
+        flex: 1;
+        content: '';
+      }
+    }
+
+    .login-user {
+      .user-social {
+        margin-bottom: 3rem;
+
+        button {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1rem;
+          height: 4.5rem;
+          line-height: 4.5rem;
+          font-size: 1.6rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .bqb-icon {
+            font-size: 2rem;
+            width: 2rem;
+          }
+
+          .bqb-icon-google {
+            color: #ea4335;
+          }
+
+          span + span {
+            flex: 1 100%;
+          }
+        }
+      }
+
+      .user-text-cta {
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      .bqb-form-control {
+        @include media-breakpoint-down(md) {
+          padding: .5rem 1rem;
+          font-size: 1.625rem;
+          line-height: 1.5;
+          height: 4.5rem;
+          border-radius: .6rem;
+        }
+      }
+    }
+  }
+
+  .modal-banner {
+    position: relative;
+
+    .banner-background {
+      position: absolute;
+      top: -1.5rem;
+      right: -1.5rem;
+      bottom: -1.5rem;
+      left: 0;
+      background-size: cover;
+      border-radius: 0 0 .4rem 0;
+    }
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+}
+
+// The key aspect in this example is the `.animating` class on the wrapper: only if the wrapper has the .animating class, CSS properties are transitioned.
+// This allows us to set starting positions without any transition, and then - once `.animating` is in place transition to the end position.
+.animating .exit,
+.animating .enter {
+  transition: all .3s ease-in-out;
+}
+
+// SCALE TRANSITIONS, BEST TO COBMINE WITH FADE/OPACITY
+.enter.scaleup {
+  transform: scale(0.1);
+}
+.animating .enter.scaleup {
+  transform: scale(1);
+}
+
+.exit.scaleup {
+  transform: scale(1);
+}
+.animating .exit.scaleup {
+  transform: scale(1.9);
+  opacity: 0;
+}
+
+.enter.scaledown {
+  transform: scale(1.9);
+}
+.animating .enter.scaledown {
+  transform: scale(1);
+}
+
+.exit.scaledown {
+  transform: scale(1);
+}
+.animating .exit.scaledown {
+	transform: scale(0.1);
+}
+
+// OPACITY/FADE TRANSITIONS
+.enter.fade {
+  opacity: 0;
+}
+.animating .enter.fade {
+  opacity: 1;
+}
+.exit.fade {
+  opacity: 1;
+}
+.animating .exit.fade {
+  opacity: 0;
+}
+
+// Sequential animations: delay the animation of the entering panel */
+.animating[data-concurrent="no"] .panel.enter,
+.animating[data-sequential="yes"] .panel.enter{
+  transition-delay: .3s !important;
+}

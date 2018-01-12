@@ -1,6 +1,6 @@
 {
   "name": "bqbcore",
-  "version": "0.0.1",
+  "version": "0.9.1",
   "description": "BQB Core Framework",
   "main": "index.html",
   "scripts": {
@@ -10,13 +10,13 @@
   "author": "Santiago Converti <sconverti@buquebus.com>",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^7.1.4",
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
-    "gulp-postcss": "^7.0.0",
-    "autoprefixer": "^7.1.4",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-rename": "^1.2.2"
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0"
   },
   "dependencies": {
     "node-sass": "^4.7.2"

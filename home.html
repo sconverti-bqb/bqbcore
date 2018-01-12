@@ -2,7 +2,7 @@
 <html lang="es" dir="ltr"> <!-- Parametro de lenguaje dinamico -->
   <head>
     <!-- GENERAL -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
@@ -19,7 +19,7 @@
     <!-- Recommended favicon format -->
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Apple Touch Icon (at least 200x200px) -->
+    <!-- Apple Touch Icon (at least 200x200px) --><meta charset="UTF-8">
     <link rel="apple-touch-icon" href="src/img/favicons/apple-touch-icon.png">
 
     <!-- To run web application in full-screen -->
@@ -338,10 +338,9 @@
               <!-- CARD -->
               <div class="bqb-card">
                 <div class="card-img" style="background-image:url('https://www.buquebus.com/static/abonos/imagenes/PuntaSimple1.jpg')">
-                  <div class="bqb-ribbon">Año nuevo en Montevideo</div>
-                  <div class="bqb-ribbon-circle">
-                    <span>30%</span>
-                    <span>off</span>
+                  <div class="bqb-ribbon">
+                    <div class="bqb-ribbon-discount">30% off</div>
+                    <div class="bqb-ribbon-text">Año nuevo en Montevideo</div>
                   </div>
                 </div>
                 <div class="card-body">
@@ -357,7 +356,11 @@
 
               <!-- CARD -->
               <div class="bqb-card">
-                <div class="card-img" style="background-image:url('https://www.buquebus.com/static/abonos/imagenes/ColoniaSimple1.jpg')"></div>
+                <div class="card-img" style="background-image:url('https://www.buquebus.com/static/abonos/imagenes/ColoniaSimple1.jpg')">
+                  <div class="bqb-ribbon">
+                    <div class="bqb-ribbon-text">Sin descuento se puede poner mas texto</div>
+                  </div>
+                </div>
                 <div class="card-body">
                   <span class="card-title">Hotel Four Points by Sheraton Montevideo</span>
                   <span class="card-subtitle">
@@ -498,7 +501,12 @@
 
               <!-- CARD -->
               <div class="bqb-card">
-                <div class="card-img" style="background-image:url('https://www.buquebus.com/static/abonos/imagenes/PuntaSimple1.jpg')"></div>
+                <div class="card-img" style="background-image:url('https://www.buquebus.com/static/abonos/imagenes/PuntaSimple1.jpg')">
+                  <div class="bqb-ribbon">
+                    <div class="bqb-ribbon-discount">30% off</div>
+                    <div class="bqb-ribbon-text">Otro texto pero truncado test test</div>
+                  </div>
+                </div>
                 <div class="card-body">
                   <span class="card-title">Paquetes a Montevideo y test de texto más largo</span>
                   <span class="card-subtitle">
@@ -518,7 +526,11 @@
 
               <!-- CARD -->
               <div class="bqb-card">
-                <div class="card-img" style="background-image:url('https://www.buquebus.com/static/abonos/imagenes/ColoniaSimple1.jpg')"></div>
+                <div class="card-img" style="background-image:url('https://www.buquebus.com/static/abonos/imagenes/ColoniaSimple1.jpg')">
+                  <div class="bqb-ribbon">
+                    <div class="bqb-ribbon-discount">30% off</div>
+                  </div>
+                </div>
                 <div class="card-body">
                   <span class="card-title">Paquetes a Montevideo y test de texto más largo</span>
                   <span class="card-subtitle">
@@ -858,7 +870,7 @@
         <div class="bqb-row">
           <div class="bqb-col-xl-2"></div>
           <div class="bqb-col-12 bqb-col-xl-8">
-            <form class="form-inline" id="needs-validation" novalidate>
+            <form class="form-inline needs-validation" novalidate>
               <div class="offers-heading">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAC6UlEQVRYhe2XS0hUYRTHf/fO+EJqtDv5yiy1lGqiIqUHuJvAqIVUhGBRCK2CwFYaREhQboJqURDpJnBRSBK0CIygRYIVuowetMjUMR9jvubO434tdEZnnMc3jtcI+q/uPd/hnN/9XuceBRn1jF8FmoHNUUb7gcs4tV6pWHGkSIA0Au0JvKaBSpzacCowqoTPRQmfDUBdKiAgB5MmGSs/FRCQg3meahJZycDcAR4DwmQWCRinFsCpXQLswAHgo1kwVmlPpzYBTNAzPrNuMMJh28XCyagEciLHTw593vOyqGJFoPbep/WNDtv+CLOCIewERAbzgbEpr+HX/WIMeAc8yR/T56PCCIdNAx4AZ+PRF3umo9oLZsYrFz8gXF6DiSkf/vAddwG47rJn1OWP6aFlVxdBioC+RCBJSzf45V4BElQx8MplzygKwQiHTQW6gLI1BQFmpn2JjqAGtIRggHrg8FqDEBDMxZiSCJ1YDnM+mRzZfm9Ue1rAF24wpK+lrcEHK3AoGZiDrm9QcWSFvXLka9i7VyvnWk2DTEgrNQ2P8CuvFeGwJXez5m5BaeqCjXkh05Uvfdx7eA4Mf8j2o+QoJac7koks5C+9oCZ/ItpqeV91isHcQhxDn9jZ/yIMZDWqKvYqycMAzLmpfttBdUrpw0DoLNWlCqWpqt2m01mqA3JV2zSd2a5zv2TpdFrxGKYkyp4ch3lPzHFnuUFrngefvmSzMmMOzCYxCO7Z6IOFFm7leJiNqP/mLZNqgDVK+EILfbujz5iJe0Zws3Q4HEgL8MERe+lM3cB70z0LQFkq2L10FwwyMupCjZF1dfdMkkDdZd9D735/gJFRFwV5+RgR21VFMf9HO1JBoMgZUklX3qw3TCwgKxblGJk8w8dxhFjZsCkWC3HbYMNAiGUTrqqoikpmJlnuyYQFy/17ipwdFQqgJ+y1W5pbB4B9cVyabrfduJsojoz+em1arv8wsfTPwcTrrX3AwBqx8AeHUeZkvMvf1gAAAABJRU5ErkJggg==" alt="" class="offers-img">
                 <div class="offers-text">
@@ -980,8 +992,8 @@
     </footer>
 
     <!-- MODAL LOGIN -->
-    <div class="bqb-modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    <div class="bqb-modal bqb-modal-login fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <span class="modal-title" id="loginModalLabel">Iniciar Sesión</span>
@@ -989,7 +1001,87 @@
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Contenido principal del modal.</div>
+          <div class="modal-body">
+            <div class="bqb-container bqb-modal-login">
+              <div class="bqb-row">
+                <div class="bqb-col-12 bqb-col-lg-6 modal-form">
+
+                  <div class="login-wrapper" id="loginWrapper" data-enter="scaleup fade" data-exit="scaledown fade">
+
+                    <!-- USER LOGIN -->
+                    <div class="panel current login-user" id="loginUserPanel" data-extraclass="login-user">
+                      <div class="user-social">
+                        <div class="login-title">
+                          <span>¡Ingresá con tus cuentas!</span>
+                        </div>
+                        <button type="button" class="bqb-btn btn-facebook btn-block">
+                          <span class="bqb-icon bqb-icon-facebook" aria-hidden="true"></span>
+                          <span>Ingresá con Facebook</span>
+                        </button>
+                        <button type="button" class="bqb-btn btn-google btn-block">
+                          <span class="bqb-icon bqb-icon-google" aria-hidden="true"></span>
+                          <span>Ingresá con Google</span>
+                        </button>
+                      </div>
+                      <div class="user-email">
+                        <div class="login-title">
+                          <span>O con tu email</span>
+                        </div>
+                        <form class="needs-validation" novalidate>
+                          <label for="loginUserName">Email</label>
+                          <div class="bqb-form-group">
+                            <input class="bqb-form-control" type="text" id="loginUserName" placeholder="Ingresá tu email" required>
+                            <div class="invalid-tooltip">Por favor, ingresá un email válido</div>
+                          </div>
+                          <label for="loginUserPass">Contraseña</label>
+                          <div class="bqb-form-group">
+                            <input class="bqb-form-control" type="text" id="loginUserPass" placeholder="Ingresá tu contraseña" required>
+                            <div class="invalid-tooltip">Por favor, ingresá una contraseña válida</div>
+                          </div>
+                          <div class="bqb-form-group login-nav" data-panelwrapper="loginWrapper">
+                            <a href="#loginPasswordPanel">Olvidé mi contraseña</a>
+                          </div>
+                          <input class="bqb-btn btn-primary btn-block" type="submit" value="Ingresar">
+                        </form>
+                      </div>
+                      <div class="user-text-cta">
+                        <a href="#">Crear nueva cuenta</a>
+                      </div>
+                    </div>
+
+                    <!-- PASSWORD RECOVERY -->
+                    <div class="panel login-password" id="loginPasswordPanel" data-extraclass="login-password">
+                      <div class="bqb-form-group login-nav" data-panelwrapper="loginWrapper">
+                        <a href="#loginUserPanel">Volver</a>
+                      </div>
+
+                      <div class="user-email">
+                        <div class="login-title">
+                          <span>Recupera tu contraseña</span>
+                        </div>
+                        <p>Por favor, escribí la dirección de correo electrónico que utilizó para registrarse en el sitio.</p>
+                        <form class="needs-validation" novalidate>
+                          <label for="loginPasswordEmail">Email</label>
+                          <div class="bqb-form-group">
+                            <input class="bqb-form-control" type="text" id="loginPasswordEmail" placeholder="Ingresá tu email" required>
+                            <div class="invalid-tooltip">Por favor, ingresá un email válido</div>
+                          </div>
+                          <input class="bqb-btn btn-primary btn-block" type="submit" value="Recuperar">
+                        </form>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="bqb-col-6 modal-banner">
+                  <div class="banner-background" style="background-image: url('./src/img/login-banner.png');"></div>
+                </div>
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

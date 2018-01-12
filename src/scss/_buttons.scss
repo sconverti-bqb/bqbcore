@@ -60,7 +60,11 @@
   &.btn-primary { @include btn-theme (#0077c4); }
   &.btn-secondary { @include btn-theme (#93b551); }
   &.btn-facebook { @include btn-theme (#23599A); }
-  &.btn-google { @include btn-theme (#F74733); }
+
+  &.btn-google {
+    @include btn-theme (#e0e0e0);
+    color: #333;
+  }
 
   &.btn-navigation {
     background-color: #fff;
