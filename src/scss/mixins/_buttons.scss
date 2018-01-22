@@ -5,12 +5,12 @@
   &:focus,
   &.focus,
   &:hover,
-  &:not([disabled]):not(.disabled):active,
-  &:not([disabled]):not(.disabled):active:focus,
-  &:not([disabled]):not(.disabled):active:hover,
-  &:not([disabled]):not(.disabled).active,
-  &:not([disabled]):not(.disabled).active:focus,
-  &:not([disabled]):not(.disabled).active:hover {
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled):active:focus,
+  &:not(:disabled):not(.disabled):active:hover,
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled).active:focus,
+  &:not(:disabled):not(.disabled).active:hover {
     background-color: darken($btn-color, 10%);
   }
 
@@ -21,12 +21,12 @@
     &:focus,
     &.focus,
     &:hover,
-    &:not([disabled]):not(.disabled):active,
-    &:not([disabled]):not(.disabled):active:focus,
-    &:not([disabled]):not(.disabled):active:hover,
-    &:not([disabled]):not(.disabled).active,
-    &:not([disabled]):not(.disabled).active:focus,
-    &:not([disabled]):not(.disabled).active:hover {
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled):active:focus,
+    &:not(:disabled):not(.disabled):active:hover,
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled).active:focus,
+    &:not(:disabled):not(.disabled).active:hover {
       background-color: #bbb;
     }
   }

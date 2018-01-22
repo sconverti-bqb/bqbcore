@@ -95,6 +95,17 @@ $(document).ready(function(){
       $('.dropdown-menu li .menu-boarding-info').removeClass('loading');
     }, 5000);
   })
+
+  $('.fares-cluster .cluster-main').click(function(){
+    $(this).parent().toggleClass('expanded');
+    $(this).parent().toggleClass('open');
+    $(this).find('i').toggleClass('bqb-icon-chevron-up bqb-icon-chevron-down');
+  })
+
+  $('.cluster-categories .categories-item .item-types .types-option').click(function(){
+    $('.cluster-categories .categories-item .item-types .types-option').removeClass('active');
+    $(this).addClass('active');
+  })
 });
 
 

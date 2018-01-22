@@ -37,8 +37,13 @@
     opacity: .65;
   }
 
-  &:not([disabled]):not(.disabled):active,
-  &:not([disabled]):not(.disabled).active {
+  // Opinionated: add "hand" cursor to non-disabled .btn elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
     background-image: none;
   }
 
@@ -123,6 +128,6 @@
 
 // Future-proof disabling of clicks on `<a>` elements
 a.bqb-btn.disabled,
-fieldset[disabled] a.bqb-btn {
+fieldset:disabled a.bqb-btn {
   pointer-events: none;
 }

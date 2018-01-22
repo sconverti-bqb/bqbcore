@@ -142,7 +142,7 @@
 .bqb-select {
   display: inline-block;
   max-width: 100%;
-  height: $input-height;
+  height: $custom-select-height;
   padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
   line-height: $custom-select-line-height;
   color: $custom-select-color;

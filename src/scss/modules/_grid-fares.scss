@@ -1,0 +1,144 @@
+.bqb-grid-fares {
+  font-size: 1.4rem;
+
+  .fares-cluster {
+    .cluster-main {
+      background-color: $white;
+      cursor: pointer;
+      padding: 1.5rem 2rem;
+
+      .main-body {
+        .body-times,
+        .body-legs {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .body-times {
+          font-size: 1.6rem;
+          font-weight: bold;
+
+          span {
+            display: flex;
+          }
+
+          .times-line {
+            background: #e5e5e5;
+            height: .1rem;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            margin: 0 1rem;
+
+            span {
+              background-color: #0079cc;
+              width: .8rem;
+              height: .8rem;
+              border-radius: .4rem;
+            }
+          }
+        }
+        .body-legs {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .body-details {
+          font-size: 1.2rem;
+          color: #7f7f7f;
+        }
+      }
+
+      .main-cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2.5rem;
+        color: #0079cc;
+
+        .cta-price {
+          .price-number {
+            font-size: 1.6rem;
+
+            .number-bold {
+              font-weight: bold;
+            }
+          }
+
+          > span {
+            &:first-child {
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+
+    .cluster-categories {
+      visibility: hidden;
+      opacity: 0;
+      max-height: 0;
+      padding-top: .5rem;
+
+      .categories-item {
+        padding-top: .5rem;
+
+        .item-classes {
+          padding: .5rem 1rem;
+          text-align: center;
+          background-color: #00b8de;
+          color: $white;
+        }
+
+        .item-types {
+          display: flex;
+          margin-top: .5rem;
+
+          .types-option {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap;
+            background-color: $white;
+            border: 1px solid #ccc;
+            padding: 1.5rem 2rem;
+            margin: 0 .25rem;
+
+            &:first-child {
+              margin-left: 0;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            .option-price {
+              font-weight: bold;
+              font-size: 1.8rem;
+              color: #0079cc;
+            }
+
+            &.active {
+              background-color: #0079cc;
+              color: $white;
+
+              .option-price {
+                color: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.expanded {
+      .cluster-categories {
+        visibility: visible;
+        opacity: 1;
+        max-height: 100%;
+        transition: $transition-base;
+      }
+    }
+  }
+}

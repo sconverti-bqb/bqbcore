@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"> <!-- Parametro de lenguaje dinamico -->
+  <head>
+    <!-- GENERAL -->
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <!-- TITLE -->
+    <title>BQB Core Framework</title>
+    <meta name="description" content="Buquebus es una empresa transporte fluvial de pasajeros que une Argentina y Uruguay con sus ferries cruzando el R&eacute;o de la Plata">
+
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+    <link href="src/css/bqbcore.min.css" rel="stylesheet">
+    <link href="src/css/main.css" rel="stylesheet">
+
+    <!-- Recommended favicon format -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Apple Touch Icon (at least 200x200px) -->
+    <link rel="apple-touch-icon" href="src/img/favicons/apple-touch-icon.png">
+
+    <!-- To run web application in full-screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Status Bar Style (see Supported Meta Tags below for available values) -->
+    <!-- Has no effect unless you have the previous meta tag -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-config" content="src/img/favicons/browserconfig.xml">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#082f61">
+
+    <link rel="manifest" href="src/img/favicons/manifest.json">
+    <link rel="mask-icon" href="src/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+
+    <!-- Google Recaptcha -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+  </head>
+  <body style="background-color:#f4f4f4;">
+
+    <!-- HEADER -->
+    <header class="bqb-header header-buquebus">
+      <div class="header-brand">
+        <div class="bqb-container">
+          <div class="bqb-row">
+            <div class="bqb-col-4">
+              <div class="brand-heading">
+                <a href="#" class="heading-hamburguer"><i class="bqb-icon-hamburguer-menu" aria-hidden="true"></i></a>
+                <a href="#" class="heading-logo">
+                  <svg viewBox="0 0 482.5 164.45" fill="white">
+                    <path d="M248.4,13.15c36.5,1.6,90.6,5.9,118.1,11.1-39.2-17-86.1-25.9-136.1-24C192.3,1.75,156.5,11,125,23.85c38-9,79.7-12.7,123.4-10.7m180.9,55.6h0a.1.1,0,0,1-.1-.1c-44.7-25.4-99.8-43.4-160.4-49.9s-118.1-.7-167,14.7a787.24,787.24,0,0,1,118.5-2.6c-61.6,2.6-118.8,16.3-167.1,38.2a885.47,885.47,0,0,1,188.1-19.9,890,890,0,0,1,187.8,19.7.31.31,0,0,1,.2-.1h0m-73.5,58.6c2.3-1.5,8-6,8-14.1,0-12.3-8.2-20.6-23.4-20.6H309.9v71.2h32c13.1,0,22.9-7.4,22.9-21,.1-10-6-13.7-9-15.5m-27.8-19h11.3c5,0,6.5,3,6.5,5.8s-1.5,5.8-6.5,5.8H328Zm12.2,39.8H328v-12.5h12.2c5,0,6.6,3.2,6.6,6.2s-1.6,6.3-6.6,6.3m136.9-21.7c-3.1-3-7.9-5-14.5-5.9l-8.9-1.2a8.69,8.69,0,0,1-5.1-2.1,4.69,4.69,0,0,1-1.4-3.3c0-3.1,2.6-6.6,8.9-6.6,3.2,0,9.3-.3,13.9,4.2l11.4-11c-6.3-6.1-14.3-8.5-24.8-8.5-16.7,0-26.9,9.5-26.9,22.5,0,6.1,1.7,10.9,5.1,14.3s8.3,5.4,14.8,6.3l8.9,1.2a8,8,0,0,1,4.8,1.9,5.94,5.94,0,0,1,1.4,4.2c0,4.1-3.4,6.4-10.5,6.4-5.9,0-12.6-1.3-16.4-5l-11.6,11.2c7.4,7.4,16.6,9.4,27.9,9.4,15.5,0,28.4-7.9,28.4-22.4,0-6.6-1.5-11.9-5.4-15.6m-377.3,12c0,6.6-3.9,10.4-9.9,10.4s-9.7-3.8-9.7-10.4V92.65H62.1v46.2c0,15.6,12.5,25.6,27.8,25.6s28-10,28-25.6V92.65H99.8v45.8Zm-54-11.1c2.3-1.5,8.1-6,8.1-14.1,0-12.3-8.2-20.6-23.4-20.6H0v71.2H32c13.1,0,22.9-7.4,22.9-21,0-10-6-13.7-9.1-15.5m-27.7-19H29.4c5,0,6.5,3,6.5,5.8s-1.5,5.8-6.5,5.8H18.1Zm12.2,39.8H18.1v-12.5H30.3c5,0,6.6,3.2,6.6,6.2s-1.7,6.3-6.6,6.3m221,15.7h50v-15.6H269.4v-12.5h27.3v-15.6H269.4v-11.9h31.9V92.65h-50Zm156.4-25.4c0,6.6-3.9,10.4-9.9,10.4s-9.7-3.8-9.7-10.4V92.65H370v46.2c0,15.6,12.5,25.6,27.8,25.6s28-10,28-25.6V92.65H407.7Zm-181.9,0c0,6.6-3.9,10.4-9.9,10.4s-9.7-3.8-9.7-10.4V92.65H188.1v46.2c0,15.6,12.5,25.6,27.8,25.6s28-10,28-25.6V92.65H225.8v45.8ZM181,128.25c0-10.7.3-20.7-7.4-28.2-5.4-5.2-11.6-8-20.6-8s-15.2,2.8-20.6,8c-7.7,7.5-7.4,17.5-7.4,28.2s-.3,20.7,7.4,28.2c5.4,5.2,11.6,8,20.6,8h32.2v-15.6h-6.6c2.5-6.2,2.4-13.2,2.4-20.6m-20.8,17.4a9.7,9.7,0,0,1-14.4,0c-1.7-2.1-2.7-4.4-2.7-17.4s1-15.4,2.7-17.5a9.91,9.91,0,0,1,14.4,0c1.6,2.1,2.7,4.5,2.7,17.5s-1.1,15.3-2.7,17.4"/>
+                  </svg>
+                </a>
+                <!--[if lte IE 8]><img src="header_logo.png" alt="Buquebus Logo"><![endif]-->
+              </div>
+            </div>
+            <div class="bqb-col-8">
+              <div class="brand-tools">
+                <ul class="tools-list">
+                  <li class="tools-item-language bqb-dropdown">
+                    <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <div class="language-flag">
+                        <img src="src/img/blank.gif" class="bqb-flag flag-ar" alt="Argentina" />
+                      </div>
+                      <span class="language-text">Argentina - Espa&ntilde;ol</span>
+                      <i class="bqb-icon-chevron-down bqb-icon-margin-left" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                      <h6 class="dropdown-header">Seleccione su idioma</h6>
+                      <a class="dropdown-item" href="#">Espa&ntilde;ol</a>
+                      <a class="dropdown-item" href="#">English</a>
+                      <a class="dropdown-item" href="#">Portugues</a>
+                      <a class="dropdown-item" href="#">Deutsch</a>
+                    </div>
+                  </li>
+                  <li class="tools-item-phone d-none d-xl-flex"><i class="bqb-icon-phone-square bqb-icon-margin-right" aria-hidden="true"></i><span>Tel.: +54 11 4316-6530</span></li>
+                  <li class="tools-item-account"><a href="#" data-toggle="modal" data-target="#loginModal"><i class="bqb-icon-user-circle bqb-icon-margin-right" aria-hidden="true"></i><span class="d-none d-xl-inline">Iniciar sesi&oacute;n</span></a></li>
+                  <li class="tools-item-help d-none d-xl-flex"><a href="#">?</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-navigation">
+        <div class="bqb-container">
+          <div class="bqb-row">
+            <div class="bqb-col-12">
+
+              <div class="navigation-nav-responsive bqb-container">
+
+                <ul class="bqb-row nav-responsive-boarding-info">
+                  <li class="bqb-col-12 nav-responsive-title">Arribos y Partidas</li>
+                </ul>
+
+                <ul class="bqb-row">
+                  <li class="bqb-col-6 nav-responsive-title">Modificar pasajes</li>
+                  <li class="bqb-col-6 nav-responsive-title">Tour Francisco 360&deg;</li>
+                </ul>
+
+                <div class="nav-responsive-title">Pasajes</div>
+
+                <ul class="bqb-row">
+                  <li class="bqb-col-6"><a href="#">Pasajes a Colonia</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Montevideo</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Punta del Este</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Carmelo</a></li>
+                </ul>
+
+                <div class="nav-responsive-title">Promociones</div>
+
+                <ul class="bqb-row">
+                  <li class="bqb-col-6"><a href="#">Pasajes a Colonia</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Montevideo</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Punta del Este</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Carmelo</a></li>
+                </ul>
+
+                <div class="nav-responsive-title">Productos</div>
+
+                <ul class="bqb-row">
+                  <li class="bqb-col-6"><a href="#">Pasajes a Colonia</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Montevideo</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Punta del Este</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Carmelo</a></li>
+                </ul>
+
+                <div class="nav-responsive-title">Destinos</div>
+
+                <ul class="bqb-row">
+                  <li class="bqb-col-6"><a href="#">Pasajes a Colonia</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Montevideo</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Punta del Este</a></li>
+                  <li class="bqb-col-6"><a href="#">Pasajes a Carmelo</a></li>
+                </ul>
+
+              </div>
+
+              <ul class="navigation-nav float-xl-left">
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" href="#" id="navigationDropdownMenuPasajes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span>Pasajes</span><i class="bqb-icon-chevron-down bqb-icon-margin-left" aria-hidden="true"></i>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navigationDropdownMenuPasajes">
+                    <li><a href="#">Pasajes a Colonia</a></li>
+                    <li><a href="#">Pasajes a Montevideo</a></li>
+                    <li><a href="#">Pasajes a Punta del Este</a></li>
+                    <li><a href="#">Pasajes a Carmelo</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" href="#" id="navigationDropdownMenuPromociones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span>Promociones</span><i class="bqb-icon-chevron-down bqb-icon-margin-left" aria-hidden="true"></i>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navigationDropdownMenuPromociones">
+                    <li><a href="#">Pasajes a Colonia</a></li>
+                    <li><a href="#">Pasajes a Montevideo</a></li>
+                    <li><a href="#">Pasajes a Punta del Este</a></li>
+                    <li><a href="#">Pasajes a Carmelo</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" href="#" id="navigationDropdownMenuProductos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span>Productos</span><i class="bqb-icon-chevron-down bqb-icon-margin-left" aria-hidden="true"></i>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navigationDropdownMenuProductos">
+                    <li><a href="#">Pasajes a Colonia</a></li>
+                    <li><a href="#">Pasajes a Montevideo</a></li>
+                    <li><a href="#">Pasajes a Punta del Este</a></li>
+                    <li><a href="#">Pasajes a Carmelo</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" href="#" id="navigationDropdownMenuDestinos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span>Destinos</span><i class="bqb-icon-chevron-down bqb-icon-margin-left" aria-hidden="true"></i>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navigationDropdownMenuDestinos">
+                    <li><a href="#">Pasajes a Colonia</a></li>
+                    <li><a href="#">Pasajes a Montevideo</a></li>
+                    <li><a href="#">Pasajes a Punta del Este</a></li>
+                    <li><a href="#">Pasajes a Carmelo</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">Modificar pasajes</a></li>
+              </ul>
+              <ul class="navigation-nav float-xl-right">
+                <li class="nav-item"><a href="#" class="nav-link">Tour Francisco 360º</a></li>
+                <li class="nav-item special dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" href="#" id="navigationDropdownMenuBoarding" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Arribos y Partidas</a>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navigationDropdownMenuBoarding">
+                    <li>
+                      <div class="menu-boarding-info">
+                        <div class="boarding-info-wrapper">
+                          <table class="table">
+                            <tr>
+                              <th>Servicio</th>
+                              <th class="th-time">Hora de llegada</th>
+                              <th class="th-status">Estado</th>
+                            </tr>
+                            <tr>
+                              <td>Buque R&aacute;pido ATLANTIC (COL)</td>
+                              <td>10:15 hs.</td>
+                              <td class="boarding-status-arriving">Arribando</td>
+                            </tr>
+                            <tr>
+                              <td>Buque R&aacute;pido con combinaci&oacute;n Bus SILVIA ANA (COL)</td>
+                              <td>11:15 hs.</td>
+                              <td class="boarding-status-boarding">Embarcando</td>
+                            </tr>
+                            <tr>
+                              <td>Buque directo MVD FRANCISCO </td>
+                              <td>12:15 hs.</td>
+                              <td>En horario</td>
+                            </tr>
+                            <tr>
+                              <td>Buque directo MVD + Bus PDP(2 hs) FRANCISCO (M)</td>
+                              <td>12:45 hs.</td>
+                              <td>En horario</td>
+                            </tr>
+                          </table>
+                        </div>
+                        <div class="boarding-info-loader">
+                          <div class="bqb-loader">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                          </div>
+                          <p>Cargando...</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HOME MODULE -->
+    <div class="bqb-container" style="margin-top: 1.5rem;">
+      <div class="bqb-row">
+        <div class="bqb-col-12">
+          <h1>Compra online</h1>
+        </div>
+      </div>
+      <div class="bqb-row">
+        <div class="bqb-col-12">
+
+          <!-- GRID MODULE -->
+          <div class="bqb-grid-fares">
+            <div class="fares-cluster">
+              <div class="cluster-main">
+                <div class="main-body">
+                  <div class="body-times">
+                    <span>09:00 hs.</span>
+                    <span class="times-line">
+                      <span></span>
+                    </span>
+                    <span>13:15 hs.</span>
+                  </div>
+                  <ul class="body-legs">
+                    <li>Buenos Aires</li>
+                    <li>Colonia</li>
+                    <li>Montevideo</li>
+                  </ul>
+                  <div class="body-details">Buque rápido a Colonia + Bus a Tres Cruces. 3hs 15min.</div>
+                </div>
+                <div class="main-cta">
+                  <div class="cta-price">
+                    <span>Desde</span> <span class="price-number">ARS <span class="number-bold">900</span></span>
+                  </div>
+                  <i class="bqb-icon-chevron-down bqb-icon-margin-left" aria-hidden="true"></i>
+                </div>
+              </div>
+
+              <!-- CLUSTER TIPO -->
+              <div class="cluster-categories">
+
+                <div class="categories-item">
+                  <div class="item-classes">Cabina Económica</div>
+                  <div class="item-types">
+                    <div class="types-option">
+                      <span>Económica</span>
+                      <span class="option-price">ARS 900</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="categories-item">
+                  <div class="item-classes">Cabina Turista</div>
+                  <div class="item-types">
+                    <div class="types-option">
+                      <span>Programada</span>
+                      <span class="option-price">ARS 900</span>
+                    </div>
+                    <div class="types-option">
+                      <span>Flexible</span>
+                      <span class="option-price">ARS 900</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Mail Offers -->
+    <div class="bqb-mail-offers theme-buquebus">
+      <div class="bqb-container">
+        <div class="bqb-row">
+          <div class="bqb-col-xl-2"></div>
+          <div class="bqb-col-12 bqb-col-xl-8">
+            <form class="form-inline needs-validation" novalidate>
+              <div class="offers-heading">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAC6UlEQVRYhe2XS0hUYRTHf/fO+EJqtDv5yiy1lGqiIqUHuJvAqIVUhGBRCK2CwFYaREhQboJqURDpJnBRSBK0CIygRYIVuowetMjUMR9jvubO434tdEZnnMc3jtcI+q/uPd/hnN/9XuceBRn1jF8FmoHNUUb7gcs4tV6pWHGkSIA0Au0JvKaBSpzacCowqoTPRQmfDUBdKiAgB5MmGSs/FRCQg3meahJZycDcAR4DwmQWCRinFsCpXQLswAHgo1kwVmlPpzYBTNAzPrNuMMJh28XCyagEciLHTw593vOyqGJFoPbep/WNDtv+CLOCIewERAbzgbEpr+HX/WIMeAc8yR/T56PCCIdNAx4AZ+PRF3umo9oLZsYrFz8gXF6DiSkf/vAddwG47rJn1OWP6aFlVxdBioC+RCBJSzf45V4BElQx8MplzygKwQiHTQW6gLI1BQFmpn2JjqAGtIRggHrg8FqDEBDMxZiSCJ1YDnM+mRzZfm9Ue1rAF24wpK+lrcEHK3AoGZiDrm9QcWSFvXLka9i7VyvnWk2DTEgrNQ2P8CuvFeGwJXez5m5BaeqCjXkh05Uvfdx7eA4Mf8j2o+QoJac7koks5C+9oCZ/ItpqeV91isHcQhxDn9jZ/yIMZDWqKvYqycMAzLmpfttBdUrpw0DoLNWlCqWpqt2m01mqA3JV2zSd2a5zv2TpdFrxGKYkyp4ch3lPzHFnuUFrngefvmSzMmMOzCYxCO7Z6IOFFm7leJiNqP/mLZNqgDVK+EILfbujz5iJe0Zws3Q4HEgL8MERe+lM3cB70z0LQFkq2L10FwwyMupCjZF1dfdMkkDdZd9D735/gJFRFwV5+RgR21VFMf9HO1JBoMgZUklX3qw3TCwgKxblGJk8w8dxhFjZsCkWC3HbYMNAiGUTrqqoikpmJlnuyYQFy/17ipwdFQqgJ+y1W5pbB4B9cVyabrfduJsojoz+em1arv8wsfTPwcTrrX3AwBqx8AeHUeZkvMvf1gAAAABJRU5ErkJggg==" alt="" class="offers-img">
+                <div class="offers-text">
+                  &iexcl;Recib&eacute; antes que nadie las mejores ofertas!
+                </div>
+              </div>
+              <div class="bqb-form-group">
+                <input class="bqb-form-control" type="text" placeholder="Ingres&aacute; tu Email" required>
+                <div class="invalid-tooltip">Por favor, ingres&aacute; un email v&aacute;lido</div>
+              </div>
+              <input class="bqb-btn btn-primary" type="submit" value="Suscribirme">
+            </form>
+          </div>
+          <div class="bqb-col-xl-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bqb-footer footer-buquebus">
+      <div class="bqb-container">
+        <div class="bqb-row">
+          <div class="bqb-col-12 bqb-col-lg-2">
+            <div class="footer-navigation">
+              <div class="navigation-title">
+                <span>Productos</span>
+                <i class="bqb-icon-chevron-down" aria-hidden="true"></i>
+              </div>
+              <ul class="navigation-nav">
+                <li class="nav-item"><a href="#" class="nav-link">Pasajes</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Day Tour</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Abonos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Family Plan</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Promo D&eacute;o</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Corporativo y Grupos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Hoteles en Uruguay</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Paquetes en Uruguay</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">BQB Seguros</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Departamentos</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="bqb-col-12 bqb-col-lg-2">
+            <div class="footer-navigation">
+              <div class="navigation-title">
+                <span>La Empresa</span>
+                <i class="bqb-icon-chevron-down" aria-hidden="true"></i>
+              </div>
+              <ul class="navigation-nav">
+                <li class="nav-item"><a href="#" class="nav-link">Sobre Nosotros</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Puntos de Venta</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Terminales</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Flota</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Franquicias</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Promociones con Bancos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="bqb-col-12 bqb-col-lg-2">
+            <div class="footer-navigation">
+              <div class="navigation-title">
+                <span>Buquebus.com</span>
+                <i class="bqb-icon-chevron-down" aria-hidden="true"></i>
+              </div>
+              <ul class="navigation-nav">
+                <li class="nav-item"><a href="#" class="nav-link">Condiciones Generales</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Condiciones Web</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Pol&eacute;tica de privacidad</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="bqb-col-12 bqb-col-lg-2">
+            <div class="footer-navigation">
+              <div class="navigation-title">
+                <span>Ayuda</span>
+                <i class="bqb-icon-chevron-down" aria-hidden="true"></i>
+              </div>
+              <ul class="navigation-nav">
+                <li class="nav-item"><a href="#" class="nav-link">Informaci&oacute;n para su viaje</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Documentaci&oacute;n para su viaje</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Mascotas a bordo</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Preguntas frecuentes</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="bqb-col-12 bqb-col-lg-2">
+            <div class="footer-navigation">
+              <div class="navigation-title">
+                <span>Contacto</span>
+                <i class="bqb-icon-chevron-down" aria-hidden="true"></i>
+              </div>
+              <ul class="navigation-nav">
+                <li class="nav-item"><a href="#" class="nav-link">Atenci&oacute;n al cliente</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+                <li class="nav-item phone">Tel.: +54 11 4316-6530</li>
+                <li class="nav-item social">
+                  <p>Seguinos:</p>
+                  <a href="#">
+                    <i class="bqb-icon-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bqb-icon-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bqb-icon-facebook" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="bqb-col-12 bqb-col-lg-2">
+            <a href="http://qr.afip.gob.ar/?qr=qYnF7IZnj95xEzx9Yghcug,,">
+              <img src="https://www.buquebus.com/static/img/datafiscal.jpg" alt="Data Fiscal">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- MODAL LOGIN -->
+    <div class="bqb-modal bqb-modal-login fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="modal-title" id="loginModalLabel">Iniciar Sesi&oacute;n</span>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="bqb-container bqb-modal-login">
+              <div class="bqb-row">
+                <div class="bqb-col-12 bqb-col-lg-6 modal-form">
+
+                  <div class="login-wrapper" id="loginWrapper" data-enter="scaleup fade" data-exit="scaledown fade">
+
+                    <!-- USER LOGIN -->
+                    <div class="panel current login-user" id="loginUserPanel" data-extraclass="login-user">
+                      <div class="user-social">
+                        <div class="login-title">
+                          <span>&iexcl;Ingres&aacute; con tus cuentas!</span>
+                        </div>
+                        <button type="button" class="bqb-btn btn-facebook btn-block">
+                          <span class="bqb-icon bqb-icon-facebook" aria-hidden="true"></span>
+                          <span>Ingres&aacute; con Facebook</span>
+                        </button>
+                        <button type="button" class="bqb-btn btn-google btn-block">
+                          <span class="bqb-icon bqb-icon-google" aria-hidden="true"></span>
+                          <span>Ingres&aacute; con Google</span>
+                        </button>
+                      </div>
+                      <div class="user-email">
+                        <div class="login-title">
+                          <span>O con tu email</span>
+                        </div>
+                        <form class="needs-validation" novalidate>
+                          <label for="loginUserName">Email</label>
+                          <div class="bqb-form-group">
+                            <input class="bqb-form-control" type="text" id="loginUserName" placeholder="Ingres&aacute; tu email" required>
+                            <div class="invalid-tooltip">Por favor, ingres&aacute; un email v&aacute;lido</div>
+                          </div>
+                          <label for="loginUserPass">Contrase&ntilde;a</label>
+                          <div class="bqb-form-group">
+                            <input class="bqb-form-control" type="text" id="loginUserPass" placeholder="Ingres&aacute; tu contrase&ntilde;a" required>
+                            <div class="invalid-tooltip">Por favor, ingres&aacute; una contrase&ntilde;a v&aacute;lida</div>
+                          </div>
+                          <div class="bqb-form-group login-nav" data-panelwrapper="loginWrapper">
+                            <a href="#loginPasswordPanel">Olvid&eacute; mi contrase&ntilde;a</a>
+                          </div>
+                          <input class="bqb-btn btn-primary btn-block" type="submit" value="Ingresar">
+                        </form>
+                      </div>
+                      <div class="user-text-cta">
+                        <a href="#">Crear nueva cuenta</a>
+                      </div>
+                    </div>
+
+                    <!-- PASSWORD RECOVERY -->
+                    <div class="panel login-password" id="loginPasswordPanel" data-extraclass="login-password">
+                      <div class="bqb-form-group login-nav" data-panelwrapper="loginWrapper">
+                        <a href="#loginUserPanel">Volver</a>
+                      </div>
+
+                      <div class="user-email">
+                        <div class="login-title">
+                          <span>Recupera tu contrase&ntilde;a</span>
+                        </div>
+                        <p>Por favor, escrib&iacute; la direcci&oacute;n de correo electr&oacute;nico que utiliz&oacute; para registrarse en el sitio.</p>
+                        <form class="needs-validation" novalidate>
+                          <label for="loginPasswordEmail">Email</label>
+                          <div class="bqb-form-group">
+                            <input class="bqb-form-control" type="text" id="loginPasswordEmail" placeholder="Ingres&aacute; tu email" required>
+                            <div class="invalid-tooltip">Por favor, ingres&aacute; un email v&aacute;lido</div>
+                          </div>
+                          <div class="bqb-form-group">
+                            <div class="g-recaptcha" data-sitekey="6Lc390AUAAAAANaVjWRkr2ZIHDE8eLMUm-Or8shl"></div>
+                          </div>
+                          <input class="bqb-btn btn-primary btn-block" type="submit" value="Restablecer contraseña">
+                        </form>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="bqb-col-6 modal-banner">
+                  <div class="banner-background" style="background-image: url('./src/img/login-banner.png');"></div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL MAIL OFFERS -->
+    <div class="bqb-modal fade" id="mailOffersModal" tabindex="-1" role="dialog" aria-labelledby="mailOffersModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="modal-title" id="mailOffersModalLabel">Suscripci&oacute;n a newsletter</span>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Contenido principal del modal.</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="src/js/bqbcore.min.js"></script>
+    <script src="src/js/owl.carousel.min.js"></script>
+    <script src="src/js/bqbcore.js"></script>
+  </body>
+</html>

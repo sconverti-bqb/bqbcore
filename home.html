@@ -37,6 +37,9 @@
     <link rel="manifest" href="src/img/favicons/manifest.json">
     <link rel="mask-icon" href="src/img/favicons/safari-pinned-tab.svg" color="#563d7c">
 
+    <!-- Google Recaptcha -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 
   </head>
   <body style="background-color:#f4f4f4;">
@@ -241,6 +244,14 @@
         </div>
       </div>
     </header>
+
+
+    <div class="bqb-video-bg">
+      <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+        <source src="./src/videos/video.webm" type="video/webm">
+        <source src="./src/videos/video.mp4" type="video/mp4">
+      </video>
+    </div>
 
     <!-- PAYMENT OPTIONS MODULE -->
     <div class="bqb-payment-options">
@@ -1058,14 +1069,17 @@
                         <div class="login-title">
                           <span>Recupera tu contrase&ntilde;a</span>
                         </div>
-                        <p>Por favor, escrib&eacute; la direcci&oacute;n de correo electr&oacute;nico que utiliz&oacute; para registrarse en el sitio.</p>
+                        <p>Por favor, escrib&iacute; la direcci&oacute;n de correo electr&oacute;nico que utiliz&oacute; para registrarse en el sitio.</p>
                         <form class="needs-validation" novalidate>
                           <label for="loginPasswordEmail">Email</label>
                           <div class="bqb-form-group">
                             <input class="bqb-form-control" type="text" id="loginPasswordEmail" placeholder="Ingres&aacute; tu email" required>
                             <div class="invalid-tooltip">Por favor, ingres&aacute; un email v&aacute;lido</div>
                           </div>
-                          <input class="bqb-btn btn-primary btn-block" type="submit" value="Recuperar">
+                          <div class="bqb-form-group">
+                            <div class="g-recaptcha" data-sitekey="6Lc390AUAAAAANaVjWRkr2ZIHDE8eLMUm-Or8shl"></div>
+                          </div>
+                          <input class="bqb-btn btn-primary btn-block" type="submit" value="Restablecer contraseña">
                         </form>
                       </div>
                     </div>

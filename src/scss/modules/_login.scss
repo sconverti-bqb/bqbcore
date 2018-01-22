@@ -61,6 +61,13 @@
       }
     }
 
+    .bqb-form-group {
+      .g-recaptcha {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
     .login-user {
       .user-social {
         margin-bottom: 3rem;

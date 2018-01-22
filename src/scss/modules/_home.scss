@@ -79,3 +79,22 @@
     margin-right: .5rem;
   }
 }
+
+// video
+.bqb-video-bg {
+  max-height: 50rem;
+  position: relative;
+  z-index: -100;
+  width: 100%;
+  overflow: hidden;
+
+  video {
+    transform: translateX(0) translateY(-25%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+  }
+}
