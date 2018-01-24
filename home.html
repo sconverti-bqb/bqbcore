@@ -245,12 +245,15 @@
       </div>
     </header>
 
-
-    <div class="bqb-video-bg">
-      <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
-        <source src="./src/videos/video.webm" type="video/webm">
-        <source src="./src/videos/video.mp4" type="video/mp4">
-      </video>
+    <div class="bqb-search search-home">
+      <div class="search-video-bg">
+        <div class="video-bg-content"></div>
+        <div class="video-bg-overlay"></div>
+        <video playsinline autoplay muted loop poster="./src/videos/video.jpg" id="bgvid">
+          <source src="./src/videos/video.mp4" type="video/mp4">
+          <source src="./src/videos/video.webm" type="video/webm">
+        </video>
+      </div>
     </div>
 
     <!-- PAYMENT OPTIONS MODULE -->
@@ -880,11 +883,11 @@
         <div class="bqb-row">
           <div class="bqb-col-xl-2"></div>
           <div class="bqb-col-12 bqb-col-xl-8">
-            <form class="form-inline needs-validation" novalidate>
+            <form class="form-inline needs-validation" id="newsletterForm" novalidate>
               <div class="offers-heading">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAC6UlEQVRYhe2XS0hUYRTHf/fO+EJqtDv5yiy1lGqiIqUHuJvAqIVUhGBRCK2CwFYaREhQboJqURDpJnBRSBK0CIygRYIVuowetMjUMR9jvubO434tdEZnnMc3jtcI+q/uPd/hnN/9XuceBRn1jF8FmoHNUUb7gcs4tV6pWHGkSIA0Au0JvKaBSpzacCowqoTPRQmfDUBdKiAgB5MmGSs/FRCQg3meahJZycDcAR4DwmQWCRinFsCpXQLswAHgo1kwVmlPpzYBTNAzPrNuMMJh28XCyagEciLHTw593vOyqGJFoPbep/WNDtv+CLOCIewERAbzgbEpr+HX/WIMeAc8yR/T56PCCIdNAx4AZ+PRF3umo9oLZsYrFz8gXF6DiSkf/vAddwG47rJn1OWP6aFlVxdBioC+RCBJSzf45V4BElQx8MplzygKwQiHTQW6gLI1BQFmpn2JjqAGtIRggHrg8FqDEBDMxZiSCJ1YDnM+mRzZfm9Ue1rAF24wpK+lrcEHK3AoGZiDrm9QcWSFvXLka9i7VyvnWk2DTEgrNQ2P8CuvFeGwJXez5m5BaeqCjXkh05Uvfdx7eA4Mf8j2o+QoJac7koks5C+9oCZ/ItpqeV91isHcQhxDn9jZ/yIMZDWqKvYqycMAzLmpfttBdUrpw0DoLNWlCqWpqt2m01mqA3JV2zSd2a5zv2TpdFrxGKYkyp4ch3lPzHFnuUFrngefvmSzMmMOzCYxCO7Z6IOFFm7leJiNqP/mLZNqgDVK+EILfbujz5iJe0Zws3Q4HEgL8MERe+lM3cB70z0LQFkq2L10FwwyMupCjZF1dfdMkkDdZd9D735/gJFRFwV5+RgR21VFMf9HO1JBoMgZUklX3qw3TCwgKxblGJk8w8dxhFjZsCkWC3HbYMNAiGUTrqqoikpmJlnuyYQFy/17ipwdFQqgJ+y1W5pbB4B9cVyabrfduJsojoz+em1arv8wsfTPwcTrrX3AwBqx8AeHUeZkvMvf1gAAAABJRU5ErkJggg==" alt="" class="offers-img">
                 <div class="offers-text">
-                  &iexcl;Recib&eacute; antes que nadie las mejores ofertas!
+                  &iexcl;Recib&iacute; antes que nadie las mejores ofertas!
                 </div>
               </div>
               <div class="bqb-form-group">
@@ -1100,7 +1103,7 @@
     </div>
 
     <!-- MODAL MAIL OFFERS -->
-    <div class="bqb-modal fade" id="mailOffersModal" tabindex="-1" role="dialog" aria-labelledby="mailOffersModalLabel" aria-hidden="true">
+    <div class="bqb-modal bqb-modal-mail-offers fade" id="mailOffersModal" tabindex="-1" role="dialog" aria-labelledby="mailOffersModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -1109,7 +1112,11 @@
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Contenido principal del modal.</div>
+          <div class="modal-body">
+            <i class="bqb-icon-check-circle" aria-hidden="true"></i>
+            <span>¡Gracias por suscribirte!</span>
+            <p>Ya est&aacute;s suscripto, en breve comenzar&aacute;s a recibir las mejores ofertas y promociones.</p>
+          </div>
         </div>
       </div>
     </div>

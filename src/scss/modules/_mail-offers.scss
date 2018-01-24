@@ -80,3 +80,30 @@
     color: $mail-offers-buquebus-color;
   }
 }
+
+.bqb-modal-mail-offers {
+  .modal-body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+
+    i,
+    span {
+      color: #28a745;
+    }
+
+    i {
+      font-size: 6rem;
+    }
+
+    span {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+  }
+}
