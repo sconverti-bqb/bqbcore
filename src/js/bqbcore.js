@@ -106,6 +106,21 @@ $(document).ready(function(){
     $('.cluster-categories .categories-item .item-types .types-option').removeClass('active');
     $(this).addClass('active');
   })
+
+  // Header Dropdown submenu
+  $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+    if (!$(this).next().hasClass('show')) {
+      $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+    }
+    var $subMenu = $(this).next(".dropdown-menu");
+    $subMenu.toggleClass('show');
+
+    $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+      $('.dropdown-submenu .show').removeClass("show");
+    });
+
+    return false;
+  });
 });
 
 
@@ -142,14 +157,12 @@ $(document).ready(function(){
 jQuery(function($) {
 
 	var startAnimation = function($panelContainer) {
-
 		// Set .animating class (which triggers the CSS to start the animation)
 		$panelContainer.addClass('animating');
 
 	};
 
 	var updatePanelNav = function($panelNav, $panelContainer, $panelToSlideIn, numPanels) {
-
 		// Find index of $panelToSlideIn in the $panelContainer
 		var idx = $panelToSlideIn.index('#' + $panelContainer.attr('id') + ' > .panel');
 
@@ -168,10 +181,8 @@ jQuery(function($) {
 	};
 
 	var stopAnimation = function($panelContainer, $panels, $panelToSlideIn) {
-
 		// Fix for browsers who fire this handler for both prefixed and unprefixed events (looking at you, Chrome): remove any listeners
 		// $panelToSlideIn.off('transitionend webkitTransitionEnd	MSTransitionEnd');
-
 		// An optional extra class (or set of classes) that might be set on the panels
 		var extraClass = $panels.data('extraclass') || '';
 
@@ -187,15 +198,12 @@ jQuery(function($) {
 	};
 
 	var setExitPanel = function($panelToSlideOut, exitAnimation) {
-
 		$panelToSlideOut
 			.addClass('exit ' + exitAnimation)
 			.removeClass('current');
-
 	};
 
 	var setEnterPanel = function($panelContainer, $panels, $panelToSlideIn, enterAnimation) {
-
 		$panelToSlideIn
 
 			// Slide it into view
@@ -209,18 +217,15 @@ jQuery(function($) {
 
 			// })
 			;
-
 	};
 
 	$('.login-nav').each(function(i) {
-
 		var $panelNav = $(this),
 			$panelNavItems = $panelNav.find('a'),
 			$panelContainer = $('#' + $panelNav.data('panelwrapper')),
 			$panels = $panelContainer.find('> .panel'),
 			numPanels = $panels.length,
 			animationDuration = ($panelContainer.data('sequential') == 'yes') ? 600 : 300;
-
 
 		if (numPanels > 1) {
 			$panelNav.find('a[href="#next"]').removeClass('inactive');
