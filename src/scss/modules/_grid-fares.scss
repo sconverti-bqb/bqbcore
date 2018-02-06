@@ -2,6 +2,12 @@
   font-size: 1.4rem;
 
   .fares-cluster {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
     .cluster-main {
       background-color: $white;
       cursor: pointer;
@@ -78,7 +84,6 @@
       visibility: hidden;
       opacity: 0;
       max-height: 0;
-      padding-top: .5rem;
 
       .categories-item {
         padding-top: .5rem;
