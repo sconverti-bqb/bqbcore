@@ -7,7 +7,12 @@
     &:last-child {
       margin-bottom: 0;
     }
-    
+
+    .cluster-main,
+    .cluster-categories {
+      box-shadow: 0 1px 6px rgba(164,163,163,0.6);
+    }
+
     .cluster-main {
       background-color: $white;
       cursor: pointer;
@@ -28,20 +33,34 @@
             display: flex;
           }
 
+          .times-icon {
+            &.icon-ship {
+              color: #0079cc;
+              margin-left: 1rem;
+            }
+          }
+
           .times-line {
-            background: #e5e5e5;
+            border: 1px solid;
             height: .1rem;
             flex: 1;
             justify-content: center;
             align-items: center;
-            margin: 0 1rem;
+            margin-left: 1rem;
 
-            span {
-              background-color: #0079cc;
-              width: .8rem;
-              height: .8rem;
-              border-radius: .4rem;
+            &.line-ship { border-color: #0079cc; }
+            &.line-bus {
+              border-style: dashed;
+              margin: 0 1rem;
             }
+          }
+
+          .times-dot {
+            background-color: #0079cc;
+            width: .8rem;
+            height: .8rem;
+            border-radius: .4rem;
+            margin-right: 1rem;
           }
         }
         .body-legs {
@@ -63,17 +82,17 @@
         color: #0079cc;
 
         .cta-price {
-          .price-number {
-            font-size: 1.6rem;
-
-            .number-bold {
-              font-weight: bold;
-            }
+          i {
+            font-size: 1.8rem;
           }
 
-          > span {
-            &:first-child {
-              color: #333;
+          .price-product {
+            display: flex;
+            align-items: center;
+
+            .price-number {
+              font-weight: bold;
+              margin-left: .5rem;
             }
           }
         }
@@ -86,18 +105,19 @@
       max-height: 0;
 
       .categories-item {
-        padding-top: .5rem;
-
         .item-classes {
           padding: .5rem 1rem;
           text-align: center;
-          background-color: #00b8de;
           color: $white;
+
+          &.classes-economy { background-color: #00b9e0 }
+          &.classes-tourist { background-color: #007ad0 }
+          &.classes-business { background-color: #005397 }
+          &.classes-special { background-color: #caa770 }
         }
 
         .item-types {
           display: flex;
-          margin-top: .5rem;
 
           .types-option {
             display: flex;
@@ -106,9 +126,9 @@
             justify-content: center;
             flex-flow: column nowrap;
             background-color: $white;
-            border: 1px solid #ccc;
-            padding: 1.5rem 2rem;
-            margin: 0 .25rem;
+            padding: 1.5rem 0;
+            margin: 0 .1rem;
+            position: relative;
 
             &:first-child {
               margin-left: 0;
@@ -118,21 +138,95 @@
               margin-right: 0;
             }
 
+            .option-info {
+              position: absolute;
+              right: 0;
+              font-size: 2rem;
+              top: 0;
+              line-height: 1;
+              text-align: right;
+              padding: 1rem;
+            }
+
             .option-price {
               font-weight: bold;
               font-size: 1.8rem;
               color: #0079cc;
             }
 
+            .option-discounts {
+              color: $green;
+              font-size: 1.1rem;
+              font-weight: bold;
+            }
+
+            .option-last-seats {
+              color: $red;
+              font-size: 1.1rem;
+              font-weight: bold;
+            }
+
             &.active {
               background-color: #0079cc;
               color: $white;
 
-              .option-price {
+              span {
                 color: inherit;
               }
             }
           }
+        }
+      }
+
+      .categories-upgrade {
+        background-color: #005494;
+        color: $white;
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        flex-flow: column nowrap;
+        position: relative;
+
+        .close {
+          position: absolute;
+          right: 1.5rem;
+          top: 1.5rem;
+          color: $white;
+          opacity: 1;
+        }
+
+        span {
+          font-weight: bold;
+
+          i {
+            color: #ffd04e;
+          }
+        }
+
+        p {
+          margin: 1.5rem 0;
+          text-align: center;
+        }
+
+        .btn-navigation{
+          background-color: #003f64;
+          border-color: $white;
+          color: $white;
+        }
+
+        .upgrade-title,
+        .upgrade-price {
+          font-size: 1.6rem;
+        }
+
+        .upgrade-title {
+          text-transform: uppercase;
+          font-size: 2rem;
+        }
+
+        .upgrade-price {
+          font-size: 2rem;
+          color: #ffd04e;
         }
       }
     }

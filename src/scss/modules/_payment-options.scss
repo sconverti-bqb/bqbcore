@@ -1,6 +1,7 @@
 .bqb-payment-options {
   background-color: $white;
   margin-bottom: 3rem;
+  box-shadow: 0 1px 6px rgba(164,163,163,0.6);
 
   @include media-breakpoint-down(lg) {
     padding-bottom: 1rem;

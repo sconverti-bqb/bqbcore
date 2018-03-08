@@ -140,7 +140,7 @@ $sizes: map-merge((
 //
 // Settings for the `<body>` element.
 
-$body-bg:       $white !default;
+$body-bg:       #e4e5ea !default;
 $body-color:    #333 !default;
 
 // Links
@@ -436,47 +436,63 @@ $custom-checkbox-indicator-indeterminate-box-shadow: none !default;
 $custom-radio-indicator-border-radius: 50% !default;
 $custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3E%3C/svg%3E"), "#", "%23") !default;
 
-$custom-select-padding-y:           .6rem !default;
-$custom-select-padding-x:           1.2rem !default;
-$custom-select-height:              $input-height !default;
-$custom-select-indicator-padding:   1.6rem !default; // Extra padding to account for the presence of the background-image based indicator
-$custom-select-line-height:         $input-btn-line-height !default;
-$custom-select-color:               $input-color !default;
-$custom-select-disabled-color:      $gray-600 !default;
-$custom-select-bg:                  $white !default;
-$custom-select-disabled-bg:         $gray-200 !default;
-$custom-select-bg-size:             8px 10px !default; // In pixels because image dimensions
-$custom-select-indicator-color:      #333 !default;
-$custom-select-indicator:           str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23") !default;
-$custom-select-border-width:        $input-btn-border-width !default;
-$custom-select-border-color:        $input-border-color !default;
-$custom-select-border-radius:       $border-radius !default;
+$custom-select-padding-y:               .6rem !default;
+$custom-select-padding-x:               1.2rem !default;
+$custom-select-height:                  $input-height !default;
+$custom-select-indicator-padding:       1.6rem !default; // Extra padding to account for the presence of the background-image based indicator
+$custom-select-line-height:             $input-btn-line-height !default;
+$custom-select-color:                   $input-color !default;
+$custom-select-disabled-color:          $gray-600 !default;
+$custom-select-bg:                      $white !default;
+$custom-select-disabled-bg:             $gray-200 !default;
+$custom-select-bg-size:                 8px 10px !default; // In pixels because image dimensions
+$custom-select-indicator-color:         #333 !default;
+$custom-select-indicator:               str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$custom-select-border-width:            $input-btn-border-width !default;
+$custom-select-border-color:            $input-border-color !default;
+$custom-select-border-radius:           $border-radius !default;
 
-$custom-select-focus-border-color:  $input-focus-border-color !default;
-$custom-select-focus-box-shadow:    inset 0 1px 2px rgba($black, .075), $input-btn-focus-box-shadow !default;
+$custom-select-focus-border-color:      $input-focus-border-color !default;
+$custom-select-focus-box-shadow:        inset 0 1px 2px rgba($black, .075), $input-btn-focus-box-shadow !default;
 
-$custom-select-font-size-sm:        75% !default;
-$custom-select-height-sm:           $input-height-sm !default;
+$custom-select-font-size-sm:            75% !default;
+$custom-select-height-sm:               $input-height-sm !default;
 
-$custom-select-font-size-lg:        125% !default;
-$custom-select-height-lg:           $input-height-lg !default;
+$custom-select-font-size-lg:            125% !default;
+$custom-select-height-lg:               $input-height-lg !default;
 
-$custom-file-height:                $input-height !default;
-$custom-file-width:                 14rem !default;
-$custom-file-focus-border-color:    $input-focus-border-color !default;
-$custom-file-focus-box-shadow:      $input-btn-focus-box-shadow !default;
+$custom-range-track-width:              100% !default;
+$custom-range-track-height:             .75rem !default;
+$custom-range-track-cursor:             pointer !default;
+$custom-range-track-bg:                 $gray-300 !default;
+$custom-range-track-border-radius:      1.25rem !default;
+$custom-range-track-box-shadow:         inset 0 .25rem .25rem rgba($black, .1) !default;
 
-$custom-file-padding-y:             $input-btn-padding-y !default;
-$custom-file-padding-x:             $input-btn-padding-x !default;
-$custom-file-line-height:           $input-btn-line-height !default;
-$custom-file-color:                 $input-color !default;
-$custom-file-bg:                    $input-bg !default;
-$custom-file-border-width:          $input-btn-border-width !default;
-$custom-file-border-color:          $input-border-color !default;
-$custom-file-border-radius:         $input-border-radius !default;
-$custom-file-box-shadow:            $input-box-shadow !default;
-$custom-file-button-color:          $custom-file-color !default;
-$custom-file-button-bg:             $input-group-addon-bg !default;
+$custom-range-thumb-width:              1.5rem !default;
+$custom-range-thumb-height:             $custom-range-thumb-width !default;
+$custom-range-thumb-bg:                 $component-active-bg !default;
+$custom-range-thumb-border:             0 !default;
+$custom-range-thumb-border-radius:      1.5rem !default;
+$custom-range-thumb-box-shadow:         0 .1rem .25rem rgba($black, .1) !default;
+$custom-range-thumb-focus-box-shadow:   0 0 0 1px $body-bg, $input-btn-focus-box-shadow !default;
+$custom-range-thumb-active-bg:          lighten($component-active-bg, 35%) !default;
+
+$custom-file-height:                    $input-height !default;
+$custom-file-width:                     14rem !default;
+$custom-file-focus-border-color:        $input-focus-border-color !default;
+$custom-file-focus-box-shadow:          $input-btn-focus-box-shadow !default;
+
+$custom-file-padding-y:                 $input-btn-padding-y !default;
+$custom-file-padding-x:                 $input-btn-padding-x !default;
+$custom-file-line-height:               $input-btn-line-height !default;
+$custom-file-color:                     $input-color !default;
+$custom-file-bg:                        $input-bg !default;
+$custom-file-border-width:              $input-btn-border-width !default;
+$custom-file-border-color:              $input-border-color !default;
+$custom-file-border-radius:             $input-border-radius !default;
+$custom-file-box-shadow:                $input-box-shadow !default;
+$custom-file-button-color:              $custom-file-color !default;
+$custom-file-button-bg:                 $input-group-addon-bg !default;
 $custom-file-text: (
   placeholder: (
     en: "Choose file..."
@@ -488,8 +504,8 @@ $custom-file-text: (
 
 
 // Form validation
-$form-feedback-valid-color:   theme-color("success") !default;
-$form-feedback-invalid-color: theme-color("danger") !default;
+$form-feedback-valid-color:             theme-color("success") !default;
+$form-feedback-invalid-color:           theme-color("danger") !default;
 
 
 // Dropdowns
@@ -700,6 +716,7 @@ $modal-title-font-size:           2rem !default;
 $modal-content-bg:                $white !default;
 $modal-content-border-color:      rgba($black,.2) !default;
 $modal-content-border-width:      $border-width !default;
+$modal-content-border-radius:     $border-radius-lg !default;
 $modal-content-box-shadow-xs:     0 .3rem .9rem rgba($black,.5) !default;
 $modal-content-box-shadow-sm-up:  0 .5rem 1.5rem rgba($black,.5) !default;
 
@@ -834,22 +851,28 @@ $dot-background-active:	  $white !default;
 
 // Fonts
 
-$bqb-icon-arrow-left: "\e900";
-$bqb-icon-arrow-right: "\e901";
-$bqb-icon-arrow-up: "\e902";
-$bqb-icon-arrow-down: "\e903";
-$bqb-icon-chevron-left: "\e904";
-$bqb-icon-chevron-right: "\e905";
-$bqb-icon-chevron-up: "\e906";
-$bqb-icon-chevron-down: "\e907";
-$bqb-icon-check-circle: "\e908";
-$bqb-icon-phone-square: "\e909";
-$bqb-icon-facebook: "\e90a";
-$bqb-icon-google: "\e90b";
-$bqb-icon-instagram: "\e90c";
-$bqb-icon-twitter: "\e90d";
-$bqb-icon-user-circle: "\e90e";
-$bqb-icon-hamburguer-menu: "\e90f";
-$bqb-icon-boarding-info: "\e910";
-$bqb-icon-map-marker: "\e911";
-$bqb-icon-travel-tips: "\e912";
+$bqb-icon-arrow-left: \e900;
+$bqb-icon-arrow-right: \e901;
+$bqb-icon-arrow-up: \e902;
+$bqb-icon-arrow-down: \e903;
+$bqb-icon-chevron-left: \e904;
+$bqb-icon-chevron-right: \e905;
+$bqb-icon-chevron-up: \e906;
+$bqb-icon-chevron-down: \e907;
+$bqb-icon-check-circle: \e908;
+$bqb-icon-check-seal: \e909;
+$bqb-icon-phone-square: \e90a;
+$bqb-icon-facebook: \e90b;
+$bqb-icon-google: \e90c;
+$bqb-icon-instagram: \e90d;
+$bqb-icon-twitter: \e90e;
+$bqb-icon-user-circle: \e90f;
+$bqb-icon-user-inverted-circle: \e910;
+$bqb-icon-hamburguer-menu: \e911;
+$bqb-icon-boarding-info: \e912;
+$bqb-icon-map-marker: \e913;
+$bqb-icon-travel-tips: \e914;
+$bqb-icon-passengers: \e915;
+$bqb-icon-vehicles: \e916;
+$bqb-icon-bus: \e917;
+$bqb-icon-info-circle: \e918;

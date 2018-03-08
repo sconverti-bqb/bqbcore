@@ -102,6 +102,11 @@ $(document).ready(function(){
     $(this).find('i').toggleClass('bqb-icon-chevron-up bqb-icon-chevron-down');
   })
 
+  $('.cluster-categories .categories-item .item-types .types-option .option-info').click(function(e){
+    $('#gridFaresModal').modal();
+    e.stopPropagation();
+  })
+
   $('.cluster-categories .categories-item .item-types .types-option').click(function(){
     $('.cluster-categories .categories-item .item-types .types-option').removeClass('active');
     $(this).addClass('active');
