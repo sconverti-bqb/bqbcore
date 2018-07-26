@@ -1,0 +1,161 @@
+@import "functions";
+@import "variables";
+@import "mixins";
+
+.checkout-inline-cta {
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 1.6rem;
+  }
+
+  .bqb-row {
+    align-items: center;
+
+    > div {
+      &:last-child {
+        text-align: right;
+
+        @include media-breakpoint-down(sm) {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  button {
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+
+  .inline-cta-discount {
+    background-image: url("../img/discount/trama-seccion-cupon.png"), linear-gradient(4deg, #ffa929, #f7164a);
+    padding: 1rem;
+
+    .discount-text {
+      color: $white;
+      margin-right: 1rem;
+      font-weight: bold;
+      align-items: center;
+      font-size: 1.4rem;
+
+      @include media-breakpoint-down(sm) {
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 1.6rem;
+      }
+
+      i, span {
+        vertical-align: middle;
+      }
+
+      i {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  .inline-cta-buy {
+    padding: 1rem;
+
+    a {
+      @include media-breakpoint-down(sm) {
+        display: block;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.modal-ticket-fares {
+  .h5, .h6 {
+    display: block;
+  }
+  .h6 {
+    font-weight: bold;
+  }
+}
+
+.modal-discount-coupon {
+  .modal-body {
+    padding: 4.5rem 1.5rem;
+
+    .discount-coupon-form,
+    .discount-coupon-success {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      max-height: 0;
+      transition: opacity .15s linear;
+    }
+
+    .discount-coupon-title {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .discount-coupon-form {
+      form {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 70%;
+
+        @include media-breakpoint-down(md) {
+          flex-flow: column nowrap;
+        }
+
+        .bqb-form-group {
+          width: 100%;
+          margin-right: .5rem;
+
+          .bqb-form-control {
+            @include media-breakpoint-down(md) {
+              padding: .5rem 1rem;
+              font-size: 1.625rem;
+              line-height: 1.5;
+              height: 4.5rem;
+              border-radius: .6rem;
+            }
+          }
+        }
+      }
+    }
+
+    .discount-coupon-overview {
+      padding: 0;
+      margin-bottom: 2rem;
+      list-style: none;
+      font-size: 1.4rem;
+      text-align: center;
+
+      span {
+        font-weight: bold;
+
+        &.strikethrough {
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    .active {
+      visibility: visible;
+      opacity: 1;
+      max-height: 100%;
+    }
+  }
+
+  button.close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10;
+  }
+}

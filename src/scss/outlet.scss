@@ -1,0 +1,65 @@
+@import "functions";
+@import "variables";
+@import "mixins/breakpoints";
+
+.bqb-outlet {
+  .outlet-main {
+    margin-top: 2rem;
+    
+    .main-offers {
+      .offers-wrapper {
+        font-size: 1.4rem;
+        background-color: $white;
+        border-radius: $border-radius;
+        box-shadow: 0 1px 6px rgba(164,163,163,0.6);
+      }
+
+      .offers-row {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        margin: 0;
+        color: #666;
+        cursor: pointer;
+        user-select: none;
+
+        &:last-child {
+          border: 0 none;
+        }
+
+        div {
+          text-align: center;
+          padding: 1.5rem;
+        }
+
+        .col-date {
+          font-weight: bold;
+          font-size: 1.6rem;
+          color: #0077c4;
+          span {
+            font-weight: normal;
+            font-size: 1.2rem;
+            display: block;
+          }
+        }
+
+        .col-ship {
+          text-align: left;
+        }
+
+        .col-price {
+          font-weight: bold;
+          font-size: 1.6rem;
+          color: #0198d4;
+          span {
+            font-weight: normal;
+            font-size: 1.2rem;
+            color: #666;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

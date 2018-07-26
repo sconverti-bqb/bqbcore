@@ -85,6 +85,17 @@
             }
           }
 
+          &.tools-item-whatsapp {
+            a {
+              font-size: 100%;
+              font-weight: normal;
+
+              &:hover {
+                color: $white;
+              }
+            }            
+          }
+
           &.tools-item-language {
             > a {
               display: flex;

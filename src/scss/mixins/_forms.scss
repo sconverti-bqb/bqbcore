@@ -27,38 +27,38 @@
 
 
 @mixin form-validation-state($state, $color) {
-
   .#{$state}-feedback {
     display: none;
     width: 100%;
-    // margin-top: $form-feedback-margin-top;
-    // font-size: $form-feedback-font-size;
+    margin-top: $form-feedback-margin-top;
+    font-size: $form-feedback-font-size;
     color: $color;
   }
 
   .#{$state}-tooltip {
     position: absolute;
-    bottom: 100%;
+    top: 100%;
     z-index: 5;
-    visibility: hidden;
-    opacity: 0;
+    max-width: 100%; // Contain to parent when possible
     padding: 1rem;
-    margin: auto .5rem -1.2rem;
+    margin-top: .1rem;
     font-size: 1.3rem;
     line-height: 1;
     color: $white;
-    background-color: $color;
-    border-radius: $border-radius;
-    box-shadow: 0 1px 6px rgba(164,163,163,0.6);
+    background-color: rgba($color, 1);
+    border-radius: .2rem;
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
     transition: opacity .2s,visibility .2s,transform .2s cubic-bezier(.54,.56,.48,1.71);
-    cursor: default;
-    user-select: none;
+    top: -2rem;
+    left: 1rem;
 
-    &::before {
+    &:before {
       content: "";
       position: absolute;
       border: 8px solid;
-      border-color: $color transparent transparent;
+      border-color: #EB1B00 transparent transparent;
       bottom: -16px;
       top: auto;
       left: 7px;
@@ -67,7 +67,7 @@
   }
 
   .bqb-form-control,
-  .bqb-custom-select {
+  .bqb-select {
     .was-validated &:#{$state},
     &.is-#{$state} {
       border-color: $color;
@@ -79,9 +79,10 @@
 
       ~ .#{$state}-feedback,
       ~ .#{$state}-tooltip {
-        transform: translateY(-1rem);
         visibility: visible;
         opacity: 1;
+        max-height: 100%;
+        transform: translateY(-1rem);
       }
     }
   }
@@ -92,13 +93,21 @@
       ~ .form-check-label {
         color: $color;
       }
+
+      ~ .#{$state}-feedback,
+      ~ .#{$state}-tooltip {
+        visibility: visible;
+        opacity: 1;
+        max-height: 100%;
+        transform: translateY(-1rem);
+      }
     }
   }
 
-  .custom-control-input {
+  .bqb-control-input {
     .was-validated &:#{$state},
     &.is-#{$state} {
-      ~ .custom-control-label {
+      ~ .bqb-control-label {
         color: $color;
 
         &::before {
@@ -108,17 +117,20 @@
 
       ~ .#{$state}-feedback,
       ~ .#{$state}-tooltip {
-        display: block;
+        visibility: visible;
+        opacity: 1;
+        max-height: 100%;
+        transform: translateY(-1rem);
       }
 
       &:checked {
-        ~ .custom-control-label::before {
+        ~ .bqb-control-label::before {
           @include gradient-bg(lighten($color, 10%));
         }
       }
 
       &:focus {
-        ~ .custom-control-label::before {
+        ~ .bqb-control-label::before {
           box-shadow: 0 0 0 1px $body-bg, 0 0 0 $input-focus-width rgba($color, .25);
         }
       }
@@ -126,10 +138,10 @@
   }
 
   // custom file
-  .custom-file-input {
+  .bqb-file-input {
     .was-validated &:#{$state},
     &.is-#{$state} {
-      ~ .custom-file-label {
+      ~ .bqb-file-label {
         border-color: $color;
 
         &::before { border-color: inherit; }
@@ -137,11 +149,14 @@
 
       ~ .#{$state}-feedback,
       ~ .#{$state}-tooltip {
-        display: block;
+        visibility: visible;
+        opacity: 1;
+        max-height: 100%;
+        transform: translateY(-1rem);
       }
 
       &:focus {
-        ~ .custom-file-label {
+        ~ .bqb-file-label {
           box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
         }
       }

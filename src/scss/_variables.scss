@@ -357,7 +357,7 @@ $btn-transition:                 color .15s ease-in-out, background-color .15s e
 $input-bg:                       $white !default;
 $input-disabled-bg:              $gray-200 !default;
 
-$input-color:                    $gray-700 !default;
+$input-color:                    #333 !default;
 $input-border-color:             $gray-400 !default;
 $input-btn-border-width:         $border-width !default; // For form controls and buttons
 $input-border-width:             $input-btn-border-width !default;
@@ -403,31 +403,30 @@ $input-group-addon-color:        $input-color !default;
 $input-group-addon-bg:           $gray-200 !default;
 $input-group-addon-border-color: $input-border-color !default;
 
-$custom-control-gutter:   1.5rem !default;
-$custom-control-spacer-y: .25rem !default;
-$custom-control-spacer-x: 1rem !default;
+$custom-control-gutter:                         2.4rem !default;
+$custom-control-spacer-x:                       1rem !default;
 
-$custom-control-indicator-size:       1rem !default;
-$custom-control-indicator-bg:         #ddd !default;
-$custom-control-indicator-bg-size:    50% 50% !default;
-$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba($black,.1) !default;
+$custom-control-indicator-size:                 1.6rem !default;
+$custom-control-indicator-bg:                   $white !default;
+$custom-control-indicator-bg-size:              50% 50% !default;
+$custom-control-indicator-box-shadow:           inset 0 .25rem .25rem rgba($black, .1) !default;
 
-$custom-control-indicator-disabled-bg:       $gray-200 !default;
-$custom-control-description-disabled-color:  $gray-600 !default;
+$custom-control-indicator-disabled-bg:          $gray-200 !default;
+$custom-control-label-disabled-color:           $gray-600 !default;
 
-$custom-control-indicator-checked-color:      $white !default;
-$custom-control-indicator-checked-bg:         theme-color("primary") !default;
-$custom-control-indicator-checked-box-shadow: none !default;
+$custom-control-indicator-checked-color:        $component-active-color !default;
+$custom-control-indicator-checked-bg:           $component-active-bg !default;
+$custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5) !default;
+$custom-control-indicator-checked-box-shadow:   none !default;
 
-$custom-control-indicator-focus-box-shadow: 0 0 0 1px $body-bg, 0 0 0 3px theme-color("primary") !default;
+$custom-control-indicator-focus-box-shadow:     0 0 0 1px $body-bg, $input-btn-focus-box-shadow !default;
 
-$custom-control-indicator-active-color:      $white !default;
-$custom-control-indicator-active-bg:         lighten(theme-color("primary"), 35%) !default;
-$custom-control-indicator-active-box-shadow: none !default;
+$custom-control-indicator-active-color:         $component-active-color !default;
+$custom-control-indicator-active-bg:            lighten($component-active-bg, 35%) !default;
+$custom-control-indicator-active-box-shadow:    none !default;
 
 $custom-checkbox-indicator-border-radius: $border-radius !default;
 $custom-checkbox-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23") !default;
-
 $custom-checkbox-indicator-indeterminate-bg: theme-color("primary") !default;
 $custom-checkbox-indicator-indeterminate-color: $custom-control-indicator-checked-color !default;
 $custom-checkbox-indicator-icon-indeterminate: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23") !default;
@@ -445,9 +444,11 @@ $custom-select-color:                   $input-color !default;
 $custom-select-disabled-color:          $gray-600 !default;
 $custom-select-bg:                      $white !default;
 $custom-select-disabled-bg:             $gray-200 !default;
-$custom-select-bg-size:                 8px 10px !default; // In pixels because image dimensions
+$custom-select-bg-size:                 14px !default; // In pixels because image dimensions
 $custom-select-indicator-color:         #333 !default;
-$custom-select-indicator:               str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$custom-select-indicator:               str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 448'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M420.75 202l-185.5 185.25c-6.25 6.25-16.25 6.25-22.5 0l-185.5-185.25c-6.25-6.25-6.25-16.5 0-22.75l41.5-41.25c6.25-6.25 16.25-6.25 22.5 0l132.75 132.75 132.75-132.75c6.25-6.25 16.25-6.25 22.5 0l41.5 41.25c6.25 6.25 6.25 16.5 0 22.75z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$custom-select-indicator-alt-color:     $link-color !default;
+$custom-select-indicator-alt:               str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 448'%3E%3Cpath fill='#{$custom-select-indicator-alt-color}' d='M420.75 202l-185.5 185.25c-6.25 6.25-16.25 6.25-22.5 0l-185.5-185.25c-6.25-6.25-6.25-16.5 0-22.75l41.5-41.25c6.25-6.25 16.25-6.25 22.5 0l132.75 132.75 132.75-132.75c6.25-6.25 16.25-6.25 22.5 0l41.5 41.25c6.25 6.25 6.25 16.5 0 22.75z'/%3E%3C/svg%3E"), "#", "%23") !default;
 $custom-select-border-width:            $input-btn-border-width !default;
 $custom-select-border-color:            $input-border-color !default;
 $custom-select-border-radius:           $border-radius !default;
@@ -494,19 +495,14 @@ $custom-file-box-shadow:                $input-box-shadow !default;
 $custom-file-button-color:              $custom-file-color !default;
 $custom-file-button-bg:                 $input-group-addon-bg !default;
 $custom-file-text: (
-  placeholder: (
-    en: "Choose file..."
-  ),
-  button-label: (
-    en: "Browse"
-  )
+  en: "Browse"
 ) !default;
 
-
 // Form validation
-$form-feedback-valid-color:             theme-color("success") !default;
-$form-feedback-invalid-color:           theme-color("danger") !default;
-
+$form-feedback-margin-top:          $form-text-margin-top !default;
+$form-feedback-font-size:           $small-font-size !default;
+$form-feedback-valid-color:         theme-color("success") !default;
+$form-feedback-invalid-color:       theme-color("danger") !default;
 
 // Dropdowns
 //
@@ -850,29 +846,45 @@ $dot-background:		      transparent !default;
 $dot-background-active:	  $white !default;
 
 // Fonts
-
-$bqb-icon-arrow-left: \e900;
-$bqb-icon-arrow-right: \e901;
-$bqb-icon-arrow-up: \e902;
-$bqb-icon-arrow-down: \e903;
-$bqb-icon-chevron-left: \e904;
-$bqb-icon-chevron-right: \e905;
-$bqb-icon-chevron-up: \e906;
-$bqb-icon-chevron-down: \e907;
-$bqb-icon-check-circle: \e908;
-$bqb-icon-check-seal: \e909;
-$bqb-icon-phone-square: \e90a;
-$bqb-icon-facebook: \e90b;
-$bqb-icon-google: \e90c;
-$bqb-icon-instagram: \e90d;
-$bqb-icon-twitter: \e90e;
-$bqb-icon-user-circle: \e90f;
-$bqb-icon-user-inverted-circle: \e910;
-$bqb-icon-hamburguer-menu: \e911;
-$bqb-icon-boarding-info: \e912;
-$bqb-icon-map-marker: \e913;
-$bqb-icon-travel-tips: \e914;
-$bqb-icon-passengers: \e915;
-$bqb-icon-vehicles: \e916;
-$bqb-icon-bus: \e917;
-$bqb-icon-info-circle: \e918;
+$bqb-icon-arrow-left: "\e900";
+$bqb-icon-arrow-right: "\e901";
+$bqb-icon-arrow-up: "\e902";
+$bqb-icon-arrow-down: "\e903";
+$bqb-icon-chevron-left: "\e904";
+$bqb-icon-chevron-right: "\e905";
+$bqb-icon-chevron-up: "\e906";
+$bqb-icon-chevron-down: "\e907";
+$bqb-icon-check: "\e908";
+$bqb-icon-check-circle: "\e909";
+$bqb-icon-check-seal: "\e90a";
+$bqb-icon-phone-square: "\e90b";
+$bqb-icon-facebook: "\e90c";
+$bqb-icon-google: "\e90d";
+$bqb-icon-instagram: "\e90e";
+$bqb-icon-twitter: "\e90f";
+$bqb-icon-user-circle: "\e910";
+$bqb-icon-user-inverted-circle: "\e911";
+$bqb-icon-hamburguer-menu: "\e912";
+$bqb-icon-boarding-info: "\e913";
+$bqb-icon-boarding-info-reverse: "\e914";
+$bqb-icon-map-marker: "\e915";
+$bqb-icon-travel-tips: "\e916";
+$bqb-icon-passengers: "\e917";
+$bqb-icon-vehicles: "\e918";
+$bqb-icon-bus: "\e919";
+$bqb-icon-info-circle: "\e91a";
+$bqb-icon-ticket: "\e91b";
+$bqb-icon-last-seats: "\e91c";
+$bqb-icon-bookmark-outline: "\e91d";
+$bqb-icon-bookmark: "\e91e";
+$bqb-icon-tag: "\e91f";
+$bqb-icon-user-plus: "\e920";
+$bqb-icon-bed: "\e921";
+$bqb-icon-calendar-alt: "\e922";
+$bqb-icon-camera: "\e923";
+$bqb-icon-ship: "\e924";
+$bqb-icon-suitcase: "\e925";
+$bqb-icon-whatsapp: "\e926";
+$bqb-icon-clock-regular: "\e927";
+$bqb-icon-discount: "\e928";
+$bqb-icon-concierge-bell: "\e929";

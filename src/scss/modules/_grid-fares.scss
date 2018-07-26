@@ -1,5 +1,131 @@
+.bqb-price-follow {
+  box-shadow: 0 1px 6px rgba(164,163,163,0.6);
+  padding: 1.5rem;
+  background-color: $white;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media-breakpoint-down(xs) {
+    margin: 1.5rem -1.5rem;
+  }
+
+  .price-follow-text {
+    @include media-breakpoint-up(xl) {
+      font-size: 1.4rem;
+    }
+
+    span {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .price-follow-icon {
+    font-size: 3rem;
+    margin-left: 3rem;
+    margin-right: 1rem;
+
+    @include media-breakpoint-up(lg) {
+      cursor: pointer;
+    }
+  }
+}
+
+.bqb-price-follow-modal {
+  .bqb-form-control {
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      height: 4.5rem;
+      line-height: 4.5rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  .bqb-checkbox {
+    margin-bottom: 1rem;
+  }
+
+  .price-follow-disclaimer {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+}
+
+.bqb-fares-upgrade-modal {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+
+  img {
+    margin-bottom: 1rem;
+  }
+
+  .h5 {
+    span {
+      font-weight: bold;
+      color: #005891;
+      font-size: 1.6rem;
+    }
+  }
+
+  a {
+    display: block;
+    margin-top: 1rem;
+  }
+}
+
 .bqb-grid-fares {
   font-size: 1.4rem;
+
+  @include media-breakpoint-up(xl) {
+    display: none;
+  }
+
+  .grid-fares-filter {
+    @include media-breakpoint-up(md) {
+      display: none!important;
+    }
+  }
+
+  .bqb-icon-check-seal { color: #85b649; }
+  .bqb-icon-last-seats { color: #fc2b2b; }
+  .bqb-icon-discount { color: #ff5e5b; }
+
+  .fares-references {
+    margin: 1rem 0;
+
+    ul {
+      display: flex;
+      flex-flow: row nowrap;
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-right: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        span, i {
+          vertical-align: middle;
+        }
+
+        span {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
 
   .fares-cluster {
     margin-bottom: 1rem;
@@ -126,7 +252,7 @@
             justify-content: center;
             flex-flow: column nowrap;
             background-color: $white;
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             margin: 0 .1rem;
             position: relative;
 
@@ -154,79 +280,23 @@
               color: #0079cc;
             }
 
-            .option-discounts {
-              color: $green;
-              font-size: 1.1rem;
-              font-weight: bold;
-            }
+            .option-alerts {
+              font-size: 2rem;
 
-            .option-last-seats {
-              color: $red;
-              font-size: 1.1rem;
-              font-weight: bold;
+              i {
+                vertical-align: middle;
+              }
             }
 
             &.active {
-              background-color: #0079cc;
+              background-color: #056ab7;
               color: $white;
 
-              span {
+              span, i {
                 color: inherit;
               }
             }
           }
-        }
-      }
-
-      .categories-upgrade {
-        background-color: #005494;
-        color: $white;
-        padding: 1.5rem;
-        display: flex;
-        align-items: center;
-        flex-flow: column nowrap;
-        position: relative;
-
-        .close {
-          position: absolute;
-          right: 1.5rem;
-          top: 1.5rem;
-          color: $white;
-          opacity: 1;
-        }
-
-        span {
-          font-weight: bold;
-
-          i {
-            color: #ffd04e;
-          }
-        }
-
-        p {
-          margin: 1.5rem 0;
-          text-align: center;
-        }
-
-        .btn-navigation{
-          background-color: #003f64;
-          border-color: $white;
-          color: $white;
-        }
-
-        .upgrade-title,
-        .upgrade-price {
-          font-size: 1.6rem;
-        }
-
-        .upgrade-title {
-          text-transform: uppercase;
-          font-size: 2rem;
-        }
-
-        .upgrade-price {
-          font-size: 2rem;
-          color: #ffd04e;
         }
       }
     }
@@ -239,5 +309,34 @@
         transition: $transition-base;
       }
     }
+  }
+
+  .fares-cta {
+    a, p {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    a {
+      ;
+      display: block;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+
+.placeholder-mobile {
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.placeholder-desktop {
+  @include media-breakpoint-down(lg) {
+    display: none;
   }
 }

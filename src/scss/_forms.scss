@@ -47,6 +47,7 @@
   // HTML5 says that controls under a fieldset > legend:first-child won't be
   // disabled if the fieldset is disabled. Due to implementation difficulty, we
   // don't honor that edge case; we style them as disabled anyway.
+  &.disabled,
   &:disabled,
   &[readonly] {
     background-color: $input-disabled-bg;
@@ -160,11 +161,11 @@ select.bqb-form-control {
   @include border-radius($input-border-radius-sm);
 }
 
-select.form-control-sm {
-  &:not([size]):not([multiple]) {
-    height: $input-height-sm;
-  }
-}
+//select.form-control-sm {
+//  &:not([size]):not([multiple]) {
+//    height: $input-height-sm;
+//  }
+//}
 
 .form-control-lg {
   padding: $input-btn-padding-y-lg $input-btn-padding-x-lg;
@@ -174,11 +175,11 @@ select.form-control-sm {
   @include border-radius($input-border-radius-lg);
 }
 
-select.form-control-lg {
-  &:not([size]):not([multiple]) {
-    height: $input-height-lg;
-  }
-}
+//select.form-control-lg {
+//  &:not([size]):not([multiple]) {
+//    height: $input-height-lg;
+//  }
+//}
 
 
 // Form groups
@@ -339,13 +340,13 @@ select.form-control-lg {
     }
 
     // Custom form controls
-    .custom-control {
+    .bqb-control {
       display: flex;
       align-items: center;
       justify-content: center;
       padding-left: 0;
     }
-    .custom-control-indicator {
+    .bqb-control-indicator {
       position: static;
       display: inline-block;
       margin-right: $form-check-input-margin-x; // Flexbox alignment means we lose our HTML space here, so we compensate.

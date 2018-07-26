@@ -182,3 +182,27 @@
     }
   }
 }
+
+.bqb-table {
+  display: table;
+  width: 100%;
+
+  .bqb-table-row {
+    display: table-row;
+  }
+
+  .bqb-table-cell, .bqb-table-head {
+  	display: table-cell;
+  }
+
+  .bqb-table-heading {
+  	display: table-header-group;
+  	font-weight: bold;
+  }
+  .bqb-table-foot {
+    display: table-footer-group;
+  }
+  .bqb-table-body {
+    display: table-row-group;
+  }
+}

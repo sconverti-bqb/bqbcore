@@ -107,9 +107,21 @@ $(document).ready(function(){
     e.stopPropagation();
   })
 
+  $('.price-follow-icon').click(function(e){
+    $('#followPriceModal').modal();
+    e.stopPropagation();
+  })
+
   $('.cluster-categories .categories-item .item-types .types-option').click(function(){
     $('.cluster-categories .categories-item .item-types .types-option').removeClass('active');
     $(this).addClass('active');
+    $('#fareUpgradeModal').modal();
+    e.stopPropagation();
+  })
+
+  $('.bqb-fares-upgrade-modal a').click(function(e){
+    $('#fareUpgradeModal').modal('hide');
+    e.preventDefault();
   })
 
   // Header Dropdown submenu
@@ -126,30 +138,261 @@ $(document).ready(function(){
 
     return false;
   });
+
+  // Search JS
+
+  $('.search-module .btn-primary').on('click', function(){
+    $(this).closest('.main-form').toggleClass('validated');
+  })
+
+  $('.search-module-mobile .btn-primary').on('click', function(){
+    $(this).closest('.main-form').toggleClass('validated');
+  })
+
+  $('.search-module-menu li').click(function(){
+    $('.search-module-menu li').removeClass('active');
+    $(this).addClass('active');
+  })
+
+  $('.search-module-mobile-menu li').click(function(){
+    $('.search-module-mobile-menu li').removeClass('active');
+    $(this).addClass('active');
+  })
+
+  $('.search-module-menu .menu-tickets').click(function(){
+    $('.search-module-main').removeClass().addClass('search-module-main main-tickets-active');
+  })
+
+  $('.search-module-menu .menu-daytours').click(function(){
+    $('.search-module-main').removeClass().addClass('search-module-main main-daytours-active');
+  })
+
+  $('.search-module-menu .menu-hotels').click(function(){
+    $('.search-module-main').removeClass().addClass('search-module-main main-hotels-active');
+  })
+
+  $('.search-module-menu .menu-packages').click(function(){
+    $('.search-module-main').removeClass().addClass('search-module-main main-packages-active');
+  })
+
+  $('.search-module-mobile-menu .menu-tickets').click(function(){
+    $('.search-module-mobile-main').removeClass().addClass('search-module-mobile-main main-tickets-active');
+  })
+
+  $('.search-module-mobile-menu .menu-daytours').click(function(){
+    $('.search-module-mobile-main').removeClass().addClass('search-module-mobile-main main-daytours-active');
+  })
+
+  $('.search-module-mobile-menu .menu-hotels').click(function(){
+    $('.search-module-mobile-main').removeClass().addClass('search-module-mobile-main main-hotels-active');
+  })
+
+  $('.search-module-mobile-menu .menu-packages').click(function(){
+    $('.search-module-mobile-main').removeClass().addClass('search-module-mobile-main main-packages-active');
+  })
+
+  $('.search-module-main .form-control').click(function(){
+    $('.search-module-main .form-popup').removeClass('active');
+    $(this).next(".form-popup").toggleClass('active');
+    return false;
+  });
+
+  $(document).click(function () {
+    $('.search-module-main .form-popup').removeClass('active');
+  });
+
+  $('#customCheck1, #customCheckMobile1').click(function(){
+    $('.form-other-destiny').toggleClass('active');
+  })
+
+  $('.form-options a').click(function(e){
+    $('.form-options a').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  })
+
+  $('#customCheck2').click(function(){
+    $('#formDEP, #formDES').toggleClass('bqb-form-control disabled bqb-select');
+    $('#formDEP').text($('#formDEP').text() === "Buenos Aires" ? "Colonia" : "Buenos Aires");
+    $('#formDES').text($('#formDES').text() === "Colonia" ? "Buenos Aires" : "Colonia");
+  })
+
+  $('#customCheckMobile2').click(function(){
+    $('#formMobileDEP, #formMobileDES').toggleClass('disabled');
+    $('#formMobileDEP div').text($('#formMobileDEP div').text() === "Buenos Aires" ? "Colonia" : "Buenos Aires");
+    $('#formMobileDES div').text($('#formMobileDES div').text() === "Colonia" ? "Buenos Aires" : "Colonia");
+  })
+
+  $('#formMobileDEP').on('click', function(){
+    $('.modal-pickers-city-dep').addClass('show-picker');
+    $('body').addClass('show-modal');
+  })
+
+  $('#formMobileDES, #formMobileHotelDES, #formMobilePackageDES, #formMobileDayToursDES').on('click', function(){
+    $('.modal-pickers-city-des').addClass('show-picker');
+    $('body').addClass('show-modal');
+  })
+
+  $('#formMobileTickets').on('click', function(){
+    $('.modal-pickers-tickets').addClass('show-picker');
+    $('body').addClass('show-modal');
+  })
+
+  $('#formMobileDayToursTickets').on('click', function(){
+    $('.modal-pickers-daytours-tickets').addClass('show-picker');
+    $('body').addClass('show-modal');
+  })
+
+  $('#formMobileHotelTickets, #formMobilePackageTickets').on('click', function(){
+    $('.modal-pickers-rooms').addClass('show-picker');
+    $('body').addClass('show-modal');
+  })
+
+  $('#formMobileDateDES, #formMobileDateHotelDES, #formMobileDateDayToursDES').on('click', function(){
+    $('.modal-pickers-dates').addClass('show-picker');
+    $('body').addClass('show-modal');
+  })
+
+  $('#formMobileDateDEP, #formMobileDateHotelDEP, #formMobileDatePackage').on('click', function(){
+    $('.modal-pickers-dates').addClass('show-picker');
+    $('body').addClass('show-modal');
+  })
+
+  $('.close-picker').on('click', function(){
+    $(this).closest('.modal-pickers-wrapper').removeClass('show-picker');
+    $('body').removeClass('show-modal');
+  })
+
+  // Home search desktop Datepicker
+  $('.search-module-main .form-dates').daterangepicker({
+    "autoApply": true,
+    "locale": {
+        "format": "DD/MM/YYYY",
+        "separator": " - ",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "daysOfWeek": ["D","L","M","M","J","V","S"],
+        "monthNames": ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+        "firstDay": 1
+    }
+  })
+
+  // Home search desktop Day Tours Datepicker
+  $('.search-module-main .form-dates-daytours').daterangepicker({
+    "autoApply": true,
+    "singleDatePicker": true,
+    "singleDateDoublePicker": true,
+    "locale": {
+        "format": "DD/MM/YYYY",
+        "separator": " - ",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "daysOfWeek": ["D","L","M","M","J","V","S"],
+        "monthNames": ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+        "firstDay": 1
+    }
+  })
+
+  // Mobile search Datepicker
+  $('#formMobileDateDES, #formMobileDateHotelDES, #formMobileDateDEP, #formMobileDateHotelDEP').daterangepicker({
+    "autoApply": true,
+    "parentEl": ".modal-pickers-dates",
+    "locale": {
+        "format": "DD/MM/YYYY",
+        "separator": " - ",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "daysOfWeek": ["D","L","M","M","J","V","S"],
+        "monthNames": ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+        "firstDay": 1
+    }
+  })
+
+  // Mobile search Day Tours Datepicker
+  $('#formMobileDateDayToursDES').daterangepicker({
+    "autoApply": true,
+    "singleDatePicker": true,
+    "singleDateDoublePicker": true,
+    "parentEl": ".modal-pickers-dates",
+    "locale": {
+        "format": "DD/MM/YYYY",
+        "separator": " - ",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "daysOfWeek": ["D","L","M","M","J","V","S"],
+        "monthNames": ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+        "firstDay": 1
+    }
+  })
+
+  // Desktop search Packages Datepicker
+  $('.search-module-main .form-dates-packages').daterangepicker({
+    "autoApply": true,
+    "singleDatePicker": true,
+    "lengthSelect": true,
+    "locale": {
+        "format": "DD/MM/YYYY",
+        "separator": " - ",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "daysOfWeek": ["D","L","M","M","J","V","S"],
+        "monthNames": ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+        "firstDay": 1
+    }
+  })
+
+  // Mobile search Packages Datepicker
+  $('#formMobileDatePackage').daterangepicker({
+    "autoApply": true,
+    "singleDatePicker": true,
+    "lengthSelect": true,
+    "locale": {
+        "format": "DD/MM/YYYY",
+        "separator": " - ",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "daysOfWeek": ["D","L","M","M","J","V","S"],
+        "monthNames": ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+        "firstDay": 1
+    }
+  })
+
+  $('.search-module-main .form-dates').on('apply.daterangepicker', function(ev, picker) {
+      $(this).find('span').text(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+  });
+
+  $('.search-module-main .form-dates-daytours, .search-module-main .form-dates-packages').on('apply.daterangepicker', function(ev, picker) {
+      $(this).find('span').text(picker.startDate.format('DD/MM/YYYY'));
+  });
+
+  $('.search-module-mobile-main .form-dates').on('apply.daterangepicker', function(ev, picker) {
+    $('.modal-pickers-dates').removeClass('show-picker');
+    $('body').removeClass('show-modal');
+    $('#formMobileDateDEP, #formMobileDateHotelDEP, #formMobileDatePackage, #formMobileDateDayToursDES').find('span').text(picker.startDate.format('DD/MM/YYYY'));
+    $('#formMobileDateDES, #formMobileDateHotelDES').find('span').text(picker.endDate.format('DD/MM/YYYY'));
+  });
+
 });
 
 
 // Form validation tooltips
 (function() {
   'use strict';
-
   window.addEventListener('load', function() {
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
-
-    // Fetch Newsletter Form
-    var newsletter = document.getElementById('newsletterForm');
-
     // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
       form.addEventListener('submit', function(event) {
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
-        } else if (newsletter.checkValidity() === true) {
-          event.preventDefault();
-          event.stopPropagation();
-          $('#mailOffersModal').modal();
         }
         form.classList.add('was-validated');
       }, false);
